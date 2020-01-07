@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/base_px.css">
+  <link rel="stylesheet" href="../css/register.css">
+  <script src="../js/jquery-3.4.0.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <header class="header container clearfix">
+    <div class="header-list1">
+      <h2 class="header-logo"><a href="http://www.360kad.com"><img
+            src="https://res.360kad.com/theme/user/img/login_logo.jpg"></a></h2>
+      <p class="header-notice"><img src="https://res.360kad.com/theme/default/img/user/2015/autoSlogo.gif"></p>
+    </div>
+    <p class="header-list2">欢迎注册</p>
+    <div class="header-list3">已有账号，<a href="/login.html">立即登录&gt;</a>
+    </div>
+  </header>
+  <div style="background-color: blue; height: 2px;"></div>
+  <main class="container main">
+    <h3 class="title">
+      欢迎注册康爱多账号
+    </h3>
+    <div class="register-box">
+      <!-- 用户名 -->
+      <div class="input-row">
+        <div class="input-box clearfix">
+          <label for="username">用&nbsp;&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+          <input type="text" id="username" placeholder="请输入用户名！">
+        </div>
+        <p class="error">
+          <i class="error-icon"></i>
+          <span class="error-text">请输入用户名!</span>
+        </p>
+      </div>
+
+      <!-- 密码 -->
+      <div class="input-row">
+        <div class="input-box clearfix">
+          <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+          <input type="password" id="password" placeholder="请输入密码！">
+          <p class="showPwd"><i></i></p>
+        </div>
+        <p class="error">
+          <i class="error-icon"></i>
+          <span class="error-text">请输入邮箱!</span>
+        </p>
+
+      </div>
+
+      <!-- 邮箱 -->
+      <div class="input-row">
+        <div class="input-box clearfix">
+          <label for="email">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
+          <input type="email" id="email" placeholder="请输入邮箱！">
+        </div>
+        <p class="error">
+          <i class="error-icon"></i>
+          <span class="error-text">请输入邮箱!</span>
+        </p>
+      </div>
+
+      <!-- 邮箱验证码 -->
+      <div class="input-row">
+        <div class="code-box clearfix">
+          <label for="verify">邮箱验证码</label>
+          <input type="text" id="verify" placeholder="请输入邮箱验证码！">
+        </div>
+        <div id="getCode">点击获取邮箱验证码</div>
+        <p class="error">
+          <i class="error-icon"></i>
+          <span class="error-text">请输入邮箱验证码!</span>
+        </p>
+      </div>
+
+      <a href="#" class="btn">立即注册</a>
+    </div>
+  </main>
+
+  <script>
+    $(function () {
+      let username = $("#username"),
+        password = $("#password"),
+        email = $("#email"),
+        verify = $("#verify"),
+        showPwd = $(".showPwd"),
+        msgs = $(".error"),
+        getCode = $("#getCode"),
+        register = $(".btn")
+
+      let emailReg = /^[a-zA-Z0-9]+([-_.][a-zA-Z0-9]+)*@[a-zA-Z0-9]+([-_.][a-zA-Z0-9]+)*\.[a-z]{2,}$/;
+      let timer = null, count = 30;
+
+      //检查用户名是否合法
+      function checkUsername() {
+        if (username.val().trim() === "") {
+          msgs.eq(0).addClass("show").children(".error-text").text("用户名不能为空");
+          return false;
+        } else {
+          msgs.eq(0).removeClass("show");
+          return true;
+        }
+      }
+
+      //检查密码框是否合法
+      function checkPassword() {
+        let len = password.val().trim().length;
+        if (len < 6 || len > 20) {
+          msgs.eq(1).addClass("show").children(".error-text").text("密码长度应在6-20位之间！");
+          return false;
+        } else {
+          msgs.eq(1).removeClass("show");
+          return true;
+        }
+      }
+
+      //检查邮箱是否合法
+      function checkEmail() {
+        if (email.val().trim() === "") {
+          msgs.eq(2).addClass("show").children(".error-text").text("邮箱不能为空");
+          return false;
+        } else {
+          msgs.eq(2).removeClass("show");
+          return true;
+        }
+      }
+
+      //检查验证码是否合法
+      function checkVerify() {
+        if (verify.val().trim() === "") {
+          msgs.eq(3).addClass("show").children(".error-text").text("验证码不能为空");
+          return false;
+        } else {
+          msgs.eq(3).removeClass("show");
+          return true;
+        }
+      }
+
+      //切换密码可见情况
+      showPwd.click(function () {
+        let now = password.attr("type");
+        if (now == "password") {
+          $(this).children("i").addClass("show-eye");
+          password.attr("type", "text");
+        } else {
+          $(this).children("i").removeClass("show-eye");
+          password.attr("type", "password");
+        }
+      })
+
+
+      //发送邮箱验证码
+      getCode.click(function () {
+        if (!checkEmail()) {
+          msgs.eq(3).addClass("show").children(".error-text").text("请输入邮箱号");
+          return;
+        }
+        if (timer) {
+          msgs.eq(3).addClass("show").children(".error-text").text("请等待30秒后在重新发送");
+          return;
+        }
+        msgs.eq(3).removeClass("show");
+        $.get({
+          url: "http://localhost/users/verifyEmail?email=" + email.val(),
+          success(res) {
+            if (res.status === 1) {
+              $(this).text(`${count}秒后重新发送`);
+              timer = setInterval(() => {
+                if (count > 0) {
+                  count--;
+                  getCode.text(`${count}秒后重新发送`);
+                } else {
+                  count = 30;
+                  getCode.text("点击获取邮箱验证码");
+                  clearInterval(timer);
+                  timer = null;
+                }
+              }, 1000);
+            } else {
+              msgs.eq(3).addClass("show").children(".error-text").text(res.msg);
+            }
+
+          }
+        })
+      })
+
+
+      //点击注册
+      register.click(function (e) {
+        e.preventDefault();
+        if (!checkUsername() || !checkPassword() || !checkEmail() || !checkVerify()) {
+          return;
+        }
+        $.post({
+          url: "http://localhost/users/register",
+          data: {
+            username: username.val(),
+            password: password.val(),
+            email: email.val(),
+            verify: verify.val()
+          },
+          success(res) {
+            if (res.status == 1) {
+              alert("注册成功");
+              location.href = "http://localhost/login.html";
+            } else if (res.status == 0) {
+              msgs.eq(3).addClass("show").children(".error-text").text(res.msg);
+            } else if (res.status == -1) {
+              msgs.eq(0).addClass("show").children(".error-text").text(res.msg);
+            } else if (res.status == -2) {
+              msgs.eq(2).addClass("show").children(".error-text").text(res.msg);
+            } else {
+              alert(res.msg)
+            }
+          }
+        })
+
+      })
+
+      username.blur(checkUsername);
+      password.blur(checkPassword);
+      email.blur(checkEmail);
+      verify.blur(checkVerify)
+
+    })
+  </script>
+</body>
+
+</html>

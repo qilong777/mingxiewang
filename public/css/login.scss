@@ -1,0 +1,173 @@
+.wrapper {
+  background-color: #4ec3ff;
+  height: 600px;
+
+  .container {
+    height: 600px;
+
+    .container-left {
+      width: 590px;
+      height: 100%;
+      padding: 0 70px;
+      float: left;
+    }
+
+    .container-right {
+      width: 388px;
+      height: 100%;
+      padding: 0 41px;
+      float: left;
+
+      .login-box {
+        width: 340px;
+        height: 412px;
+        margin: 64px 0;
+        background: #fff;
+        padding: 30px 24px;
+        position: relative;
+
+        i {
+          float: left;
+          width: 18px;
+          height: 22px;
+          margin: 9px 10px;
+          background: url("../images/login_icon.png") no-repeat;
+        }
+
+        input {
+          float: left;
+          width: 285px;
+          line-height: 24px;
+          padding: 8px 5px;
+          font-size: 14px;
+        }
+
+        .title {
+          height: 20px;
+          line-height: 20px;
+          font-size: 20px;
+          color: #333;
+          margin-bottom: 12px;
+        }
+
+        .input-box {
+          height: 40px;
+          border: solid 1px #ddd;
+
+          .user-icon {
+            background-position: -20px 0;
+          }
+
+          .lock-icon {
+            background-position: -49px 0;
+          }
+        }
+
+        .error {
+          opacity: 0;
+          height: 24px;
+          line-height: 24px;
+          -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s;
+
+          &.show {
+            opacity: 1;
+          }
+
+          .prompt-icon {
+            float: left;
+            width: 14px;
+            height: 14px;
+            background-position: 0 0;
+            margin: 5px;
+          }
+
+          .error-text {
+            float: left;
+            line-height: 24px;
+            color: #f00;
+            font-size: 12px;
+          }
+        }
+
+        .verify {
+          width: 340px;
+          height: 42px;
+
+          .input-box {
+            float: left;
+            width: 208px;
+
+            input {
+              width: 160px;
+            }
+          }
+
+          img {
+            float: left;
+            width: 130px;
+            height: 42px;
+          }
+
+        }
+
+
+        .check-box {
+          height: 20px;
+          line-height: 16px;
+          margin-bottom: 10px;
+          color: #666666;
+          font-size: 12px;
+
+          #login-checkbox {
+            float: left;
+            width: 12px;
+            height: 12px;
+            border: solid 1px #ddd;
+            margin: 3px 5px 3px 0;
+            cursor: pointer;
+          }
+
+          label {
+            line-height: 16px;
+            cursor: pointer;
+          }
+        }
+
+        .btn {
+          display: block;
+          width: 100%;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          color: #fff;
+          font-size: 20px;
+          background: #409ffb;
+          margin-bottom: 10px;
+        }
+
+        .forget {
+          height: 20px;
+          line-height: 20px;
+          font-size: 12px;
+          margin-bottom: 70px;
+
+          a:hover {
+            text-decoration: underline;
+          }
+
+          .reg {
+            color: #0099ff;
+          }
+
+          .fp {
+            color: #000;
+          }
+        }
+
+      }
+
+
+    }
+  }
+}

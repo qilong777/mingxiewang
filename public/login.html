@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/base_px.css">
+  <link rel="stylesheet" href="./css/login.css">
+  <script src="./js/jquery-3.4.0.js"></script>
+  <script src="./js/Cookie.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="container-left">
+        <img src="http://image.360kad.com/group1/M00/2D/B7/CgAgEVctrCiAC1slAAHd-utbGgk880.jpg">
+      </div>
+      <div class="container-right">
+        <div class="login-box">
+          <h3 class="title">欢迎登录</h3>
+          <div class="input-box clearfix">
+            <i class="user-icon"></i><input type="text" class="username" placeholder="请输入用户名/邮箱">
+          </div>
+          <p class="error clearfix">
+            <i class="prompt-icon"></i>
+            <span class="error-text">登录名不能为空！</span>
+          </p>
+          <div class="input-box clearfix">
+            <i class="lock-icon"></i><input type="password" class="password" placeholder="请输入您的密码">
+          </div>
+          <p class="error clearfix">
+            <i class="prompt-icon"></i>
+            <span class="error-text">密码长度应在6-20位之间！</span>
+          </p>
+          <!-- <div class="verify clearfix">
+            <div class="input-box">
+              <i class="lock-icon"></i>
+              <input type="text" placeholder="请输入验证码">
+            </div>
+            <img src="http://localhost/users/verifyImg" alt="">
+          </div>
+          <p class="error clearfix">
+            <i class="prompt-icon"></i>
+            <span class="error-text">验证码错误</span>
+          </p> -->
+          <div class="check-box">
+            <input type="checkbox" id="login-checkbox">
+            <label for="login-checkbox">2周内免登录</label>
+          </div>
+          <a href="#" class="btn">登&nbsp;&nbsp;&nbsp;&nbsp;录</a>
+          <p class="forget clearfix">
+            <a href="./html/register.html" class="reg fl">免费注册></a>
+            <a href="#" class="fp fr">忘记密码？</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+
+      let userInfo = $.getItem("userInfo") || "{}";
+      let cookie = JSON.parse(userInfo);
+      if (cookie.username && cookie.password) {
+        $.post({
+          url: "http://localhost/users/login",
+          data: {
+            username: cookie.username,
+            password: cookie.password
+          },
+          success(res) {
+            if (res.status == 1) {
+              location.href = "http://localhost";
+            } else {
+              alert("用户信息更改,请重新登录");
+            }
+          }
+        })
+      }
+
+      let msgs = $(".error"),
+        username = $(".username"),
+        password = $(".password");
+
+      //检查用户框是否合法
+      function checkUsername() {
+        if (username.val().trim() === "") {
+          msgs.eq(0).addClass("show").children(".error-text").text("用户名不能为空");
+          return false;
+        } else {
+          msgs.eq(0).removeClass("show");
+          return true;
+        }
+      }
+
+      //检查密码框是否合法
+      function checkPassword() {
+        let len = password.val().trim().length;
+        if (len < 6 || len > 20) {
+          msgs.eq(1).addClass("show").children(".error-text").text("密码长度应在6-20位之间！");
+          return false;
+        } else {
+          msgs.eq(1).removeClass("show");
+          return true;
+        }
+      }
+
+      //点击登录事件
+      $(".btn").click(function (e) {
+        let uvalue = username.val().trim(),
+          pvalue = password.val().trim();
+        e.preventDefault();
+        if (!checkUsername() || !checkPassword()) {
+          return;
+        }
+
+        $.post({
+          url: "http://localhost/users/login",
+          data: {
+            username: uvalue,
+            password: pvalue
+          },
+          success(res) {
+            if (res.status == 1) {
+              if ($("#login-checkbox").prop("checked")) {
+                $.setItem("userInfo", JSON.stringify({
+                  username: uvalue,
+                  password: pvalue
+                }, 14));
+              }
+              location.href = "http://localhost/";
+            } else if (res.status == 0) {
+              msgs.eq(1).addClass("show").children(".error-text").text(res.msg);
+            } else {
+              msgs.eq(0).addClass("show").children(".error-text").text(res.msg);
+            }
+          }
+        })
+      })
+
+
+      //用户输入框的失去焦点事件
+      username.blur(checkUsername);
+
+      //密码输入框的失去焦点事件
+      password.blur(checkPassword);
+    })
+  </script>
+
+</body>
+
+</html>

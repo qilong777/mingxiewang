@@ -1,0 +1,177 @@
+body {
+  font-family: 微软雅黑, "Microsoft YaHei";
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.header {
+  height: 90px;
+  padding-top: 10px;
+
+  .header-list1 {
+    float: left;
+    width: 266px;
+    height: 90px;
+  }
+
+  .header-list2 {
+    float: left;
+    padding: 0 20px;
+    height: 90px;
+    line-height: 90px;
+    font-size: 26px;
+  }
+
+  .header-list3 {
+    float: right;
+    width: 120px;
+    height: 90px;
+    line-height: 140px;
+    text-align: right;
+
+    a {
+      color: #006ee7;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.main {
+  .title {
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .register-box {
+    padding: 0 0 100px 360px;
+
+    .input-row {
+      width: 100%;
+      height: 50px;
+      margin-bottom: 20px;
+
+      .input-box {
+        float: left;
+        width: 463px;
+        height: 38px;
+        padding: 5px 0 5px 15px;
+        border: solid 1px #ddd;
+        font-size: 14px;
+      }
+
+      label {
+        float: left;
+        width: 90px;
+        height: 38px;
+        line-height: 38px;
+        color: #666;
+        text-align: center;
+
+      }
+
+      input {
+        float: left;
+        width: 323px;
+        height: 38px;
+        line-height: 38px;
+      }
+
+      .showPwd {
+        float: left;
+        width: 26px;
+        height: 16px;
+        padding: 11px;
+        border-left: solid 1px #ddd;
+        cursor: pointer;
+
+        i {
+          display: inline-block;
+          width: 26px;
+          height: 16px;
+          background: url("../images/iconPng8.png") no-repeat -131px 0;
+
+          &.show-eye {
+            background-position: -168px 0;
+          }
+        }
+
+      }
+
+      .code-box {
+        float: left;
+        width: 268px;
+        height: 38px;
+        border: solid 1px #ddd;
+        padding: 5px 15px;
+        margin-right: 10px;
+        font-size: 14px;
+
+        input {
+          width: 178px;
+        }
+      }
+
+      #getCode {
+        float: left;
+        width: 140px;
+        height: 48px;
+        border: solid 1px #ddd;
+        padding: 0 14px;
+        color: #fff;
+        background-color: #b5b5b5;
+        text-align: center;
+        font: 14px/50px '宋体';
+        cursor: pointer;
+      }
+
+      .error {
+        opacity: 0;
+        float: left;
+        height: 50px;
+        line-height: 50px;
+        margin-left: 10px;
+        -webkit-transition: opacity 0.3s;
+        transition: opacity 0.3s;
+
+        &.show {
+          opacity: 1;
+        }
+
+        .error-icon {
+          float: left;
+          margin: 19px 5px 5px 5px;
+          width: 14px;
+          height: 14px;
+          background: url('../images/iconPng8.png') no-repeat;
+          background-position: 0 0;
+        }
+
+        .error-text {
+          float: left;
+          color: #ff0000;
+        }
+      }
+
+    }
+
+    .btn {
+      display: block;
+      width: 480px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      color: #fff;
+      font-size: 20px;
+      background: #b5b5b5;
+      margin-bottom: 10px;
+    }
+  }
+
+
+}
