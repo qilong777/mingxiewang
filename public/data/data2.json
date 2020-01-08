@@ -1,0 +1,127 @@
+[
+  {
+    "title": "男子运动",
+    "data": [
+      {
+        "title": "运动鞋",
+        "list": [
+          "休闲鞋",
+          "板鞋",
+          "跑步鞋",
+          "帆布鞋",
+          "拖鞋",
+          "篮球鞋",
+          "足球鞋",
+          "赛车鞋",
+          "网球鞋",
+          "溯溪鞋"
+        ]
+      },
+      {
+        "title": "服装",
+        "list": [
+          "短袖T恤",
+          "短袖POLO",
+          "运动长裤",
+          "运动短裤",
+          "休闲裤",
+          "卫衣",
+          "外套"
+        ]
+      },
+      {
+        "title": "品牌推荐",
+        "list": [
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/nike.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/adi.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/neo.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/nb.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/skq1.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/puma.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/kw.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/asics.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/ln.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/syc.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "女子运动",
+    "data": [
+      {
+        "title": "运动鞋",
+        "list": [
+          "休闲鞋",
+          "板鞋",
+          "跑步鞋",
+          "帆布鞋",
+          "拖鞋",
+          "网球鞋",
+          "健步鞋"
+        ]
+      },
+      {
+        "title": "服装",
+        "list": [
+          "短袖T恤",
+          "短袖POLO",
+          "紧身裤",
+          "胸衣",
+          "运动长裤",
+          "运动短裤",
+          "运动裙",
+          "卫衣",
+          "外套"
+        ]
+      },
+      {
+        "title": "品牌推荐",
+        "list": [
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/nike.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/adi.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/neo.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/syc.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/nb.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/skq1.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/puma.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/kw.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/asics.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/ln.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "儿童",
+    "data": [
+      {
+        "title": "男童鞋",
+        "list": [
+          "婴童（0-4岁）",
+          "小童（4-10岁）",
+          "大童（10-13岁）"
+        ]
+      },
+      {
+        "title": "服装",
+        "list": [
+          "套装",
+          "裤子",
+          "T恤",
+          "外套"
+        ]
+      },
+      {
+        "title": "品牌推荐",
+        "list": [
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/nike.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/adi.jpg",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/ori.png",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/dis.png",
+          "https://images.s.cn/images/sko/topic/2013new/yanling/20151111sy/skq1.jpg"
+        ]
+      }
+    ]
+  }
+]

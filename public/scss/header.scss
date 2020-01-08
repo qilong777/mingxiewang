@@ -1,0 +1,589 @@
+header {
+  margin-bottom: 1px;
+
+  a {
+    position: relative;
+    color: #666;
+    z-index: 10;
+
+    &:hover {
+      color: #f60;
+      text-decoration: underline;
+    }
+  }
+}
+
+//头部导航
+.top-nav {
+  background: #eee;
+  border-bottom: 1px solid #e5e5e5;
+
+  .container {
+    padding-top: 4px;
+    height: 21px;
+  }
+
+  .nav {
+    float: right;
+
+    >li {
+      float: left;
+      padding: 0 15px;
+      border-right: 1px solid #d5d5d5;
+      height: 16px;
+      line-height: 16px;
+      font-family: '宋体';
+
+      .triangle {
+        position: absolute;
+        top: 6px;
+        right: 10px;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        border-width: 4px 4px 0;
+        border-style: solid;
+        border-color: #666 #eee #eee;
+      }
+    }
+
+    .isLogin {
+      a {
+        float: left;
+        color: #f60;
+        margin-left: 26px;
+      }
+    }
+
+    .mine,
+    .phone {
+      position: relative;
+      padding-right: 25px;
+
+
+
+      .triangle {
+        z-index: 10;
+      }
+
+      .mask {
+        display: none;
+        position: absolute;
+        height: 20px;
+        width: 100px;
+        left: -1px;
+        top: -4px;
+        border: 1px solid #ccc;
+        -webkit-box-shadow: 0 -3px 3px #ccc;
+        box-shadow: 0 -3px 3px #ccc;
+        border-bottom: 0;
+        background: #fff;
+        display: none;
+        z-index: 6;
+      }
+
+
+      &:hover ul,
+      &:hover .mask {
+        display: block;
+      }
+
+      ul {
+        display: none;
+        position: absolute;
+        top: 16px;
+        right: -1px;
+        width: 165px;
+        padding: 10px 0px 10px 15px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        -webkit-box-shadow: 0 0 3px #ccc;
+        box-shadow: 0 0 3px #ccc;
+        z-index: 999;
+
+        // display: none;
+        li {
+          float: left;
+          border: 0;
+          height: 27px;
+          width: 50px;
+          padding-left: 2px;
+          padding-right: 15px;
+          line-height: 26px;
+          background: url('../images/head_2013_v2.png') no-repeat 0 26px;
+          margin-right: 15px;
+        }
+      }
+
+    }
+
+    .phone {
+      margin-left: 15px;
+      background: url('../images/head_2013_v2.png') no-repeat -366px 1px;
+
+      ul {
+        width: 210px;
+        padding: 10px;
+
+        li {
+          width: auto;
+          height: auto;
+          padding: 0;
+          margin: 0;
+          background: none;
+
+          img {
+            width: 100px;
+            height: 120px;
+          }
+        }
+      }
+
+    }
+
+  }
+}
+
+
+//logo-搜索-购物车区域
+.logo {
+  h2 {
+    float: left;
+    height: 63px;
+    padding-top: 10px;
+    background: url('//images.s.cn/images/css/newlogo.png') no-repeat 0 10px;
+    width: 427px;
+  }
+
+  .logo-right {
+    float: right;
+    padding-top: 8px;
+    width: 535px;
+    height: 68px;
+
+    .search {
+      float: left;
+      width: 345px;
+      height: 55px;
+      padding: 8px 0 4px;
+      position: relative;
+
+      .search-box {
+        float: left;
+        width: 272px;
+        height: 26px;
+        overflow: hidden;
+        border: 2px solid #d5d5d5;
+        border-right: 0;
+
+        input {
+          width: 260px;
+          height: 26px;
+          line-height: 26px;
+          color: #666;
+          padding: 0 5px;
+          border: 0;
+        }
+      }
+
+      .search-btn {
+        width: 65px;
+        height: 30px;
+        background: #444;
+        float: left;
+        cursor: pointer;
+        border: 0;
+        font-family: microsoft yahei;
+        font-size: 16px;
+        color: #fff;
+      }
+
+      .hot {
+        float: left;
+        height: 28px;
+        line-height: 28px;
+        color: #ccc;
+        width: 100%;
+        overflow: hidden;
+
+        a {
+          color: #888;
+          padding-right: 4px;
+        }
+      }
+    }
+
+    .shop-cart {
+      float: right;
+      height: 34px;
+      margin-top: 12px;
+      width: 80px;
+      height: 34px;
+      line-height: 34px;
+      padding-left: 46px;
+      color: #666;
+      background: url('//images.s.cn/images/2012/1024/head_cart_bg.gif') no-repeat;
+      cursor: pointer;
+
+      a {
+        display: block;
+      }
+
+      &:hover {
+        background-position: 0 -34px;
+      }
+
+      &:hover a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .cart-num {
+        padding: 0 3px;
+        color: #c00;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+//商品选项卡区域
+
+.commodity-list {
+  height: 34px;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 5px;
+  background: url('//images.s.cn/images/2012/1024/201402241517.gif') repeat-x bottom;
+
+  .nav-list {
+    position: relative;
+    width: 1050px;
+    margin: 0 auto;
+    height: 34px;
+    background: #a21f25;
+
+    >li {
+      float: left;
+    }
+
+    .all {
+      position: relative;
+      width: 190px;
+      height: 34px;
+      line-height: 34px;
+      text-align: center;
+      font-size: 14px;
+      color: #FFF;
+      font-weight: 700;
+      background-color: #B9363D;
+
+      // &:hover .all-list {
+      //   display: block;
+      // }
+
+      .all-list {
+        display: none;
+        position: absolute;
+        top: 34px;
+        left: 0px;
+        width: 190px;
+        background-color: #1e1908;
+
+        &.active {
+          display: block;
+        }
+
+        .all-item {
+          position: relative;
+          height: 43px;
+          line-height: 43px;
+          background: #2d2d2d;
+          color: #fff;
+
+          &.active .item-list {
+            display: block;
+          }
+
+          span {
+            float: left;
+            width: 33px;
+            height: 43px;
+            margin-right: 5px;
+            text-align: right;
+            text-decoration: none;
+            font-size: 16px;
+            -webkit-transition: width 0.2s linear;
+            -webkit-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+            background: url('//images.s.cn/images/css/navcats_icon.png') no-repeat 12px -422px;
+          }
+
+          &:nth-of-type(1) span {
+            background-position: 10px -48px;
+          }
+
+          &:nth-of-type(2) span {
+            background-position: 10px -92px;
+          }
+
+          &:nth-of-type(3) span {
+            background-position: 10px -136px;
+          }
+
+          &:nth-of-type(4) span {
+            background-position: 10px -187px;
+          }
+
+          &:nth-of-type(5) span {
+            background-position: 10px -233px;
+          }
+
+          &:nth-of-type(6) span {
+            background-position: 10px -280px;
+          }
+
+          &:nth-of-type(7) span {
+            background-position: 10px -330px;
+          }
+
+          &:nth-of-type(8) span {
+            background-position: 10px -462px;
+          }
+
+          a {
+            float: left;
+            color: #fff;
+            font-size: 12px;
+          }
+
+          i {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            display: none;
+            height: 0;
+            font-size: 0;
+            line-height: 0;
+            border-style: solid;
+            border-width: 4px 4px 0;
+            border-color: #fff transparent;
+            -webkit-transition: -webkit-transform 0.2s linear;
+            transition: -webkit-transform 0.2s linear;
+            transition: transform 0.2s linear;
+            transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+          }
+
+          &:hover {
+            background-color: #a90000;
+          }
+
+          &:hover i {
+            display: block;
+            -webkit-transform: rotateZ(-90deg);
+            transform: rotateZ(-90deg);
+          }
+
+          &:hover span {
+            width: 36px;
+            background-position-x: 14px;
+          }
+
+          .item-list {
+            display: none;
+            position: absolute;
+            top: 0px;
+            left: 190px;
+            width: 280px;
+            height: 385px;
+            padding: 0 20px;
+            overflow: hidden;
+            background: #fbfbfb;
+            -webkit-box-shadow: 1px 0 2px #978d8d inset;
+            box-shadow: 1px 0 2px #978d8d inset;
+            opacity: .95;
+
+            >div {
+              overflow: hidden;
+            }
+
+            .title {
+              position: relative;
+              height: 20px;
+              width: auto;
+              margin: 25px auto 0;
+              font-size: 14px;
+              font-weight: bold;
+              border-bottom: 1px solid #000;
+
+              &.no-bg a {
+                background: none;
+                padding-left: 0;
+              }
+
+              &.no-bg .more {
+                display: none;
+              }
+
+              a {
+                display: block;
+                color: #000;
+                font-family: 'Microsoft YaHei';
+                position: absolute;
+                left: 5px;
+                bottom: 0;
+                background: url('//images.s.cn/images/css/lf_pop_icon.png') no-repeat;
+                background-position: -23px -24px;
+                width: 90px;
+                height: 20px;
+                line-height: 20px;
+                padding-top: 17px;
+                padding-left: 45px;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 14px;
+                text-align: left;
+                -webkit-transition: left .3s linear;
+                transition: left .3s linear;
+
+                &:nth-of-type(1):hover {
+                  left: 10px;
+                }
+              }
+
+              .more {
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: 0 0;
+                width: 30px;
+                padding: 0;
+                left: auto;
+                font-size: 12px;
+                color: #666;
+              }
+            }
+
+            .category-label-list {
+              margin: 10px 0 0 -1px;
+
+              a {
+                float: left;
+                white-space: nowrap;
+                padding: 0 8px;
+                margin-top: 5px;
+                line-height: 1em;
+                color: #888;
+                cursor: pointer;
+
+                &.hight-light {
+                  color: #d01f47;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .nav-list2 {
+      li {
+        position: relative;
+        float: left;
+
+        &.active .item {
+          background: #444;
+        }
+
+        .item {
+          display: block;
+          font-size: 14px;
+          padding: 0 18px;
+          line-height: 34px;
+          height: 34px;
+          text-decoration: none;
+          color: #FFF;
+          border-left: 1px solid #a21f25;
+          background: url(//images.s.cn/statics/line.png) no-repeat 0 center;
+
+          &.first {
+            padding-left: 21px;
+            margin-left: -3px;
+          }
+        }
+
+        &.active .show-list {
+          display: block;
+        }
+
+        .show-list {
+          display: none;
+          position: absolute;
+          top: 34px;
+          left: 0px;
+          width: 668px;
+          height: 292px;
+          padding: 13px 0 18px;
+          text-align: left;
+          font-family: 'Microsoft Yahei';
+          background: #fff;
+          -webkit-box-shadow: 0 0 3px #CCCCCC;
+          box-shadow: 0 0 3px #CCCCCC;
+          z-index: 10;
+
+          li {
+            float: left;
+            width: 140px;
+            padding-left: 22px;
+
+            h4 {
+              font-size: 18px;
+              display: block;
+              padding-bottom: 7px;
+              height: 24px;
+              line-height: 24px;
+              color: #2a2a2a;
+              font-weight: bold;
+            }
+
+            a {
+              display: block;
+              font-size: 12px;
+              line-height: 24px;
+              outline: none;
+              color: #555555;
+              text-decoration: none;
+              white-space: nowrap;
+
+              &:hover {
+                color: #c80000;
+              }
+            }
+          }
+
+          .brand {
+            width: 255px;
+
+            a {
+              float: left;
+              height: 35px;
+              margin: 0 3px 3px 0;
+              width: 69px;
+
+              &:hover {
+                border: 1px solid #CCCCCC;
+                height: 33px;
+                overflow: hidden;
+                width: 67px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .nav-list3 {
+      float: right;
+    }
+  }
+}

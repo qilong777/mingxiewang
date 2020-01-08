@@ -6,25 +6,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>首页</title>
+  <link rel="stylesheet" href="./css/base_px.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/footer.css">
   <script src="./js/jquery-3.4.0.js"></script>
+  <script src="./js/template.js"></script>
+  <script src="./js/header.js" type="module"></script>
 </head>
 
 <body>
-  <h1>Welcome</h1>
-  <script>
-    // $(function () {
-    //   $.get({
-    //     url: "http://localhost/users/user",
-    //     success(res) {
-    //       if (res.status === 0) {
-    //         console.log(res);
+  <header>
 
-    //         console.log("登录信息失效");
-    //       }
-    //     }
-    //   })
-    // })
-  </script>
+  </header>
+  <div class="main">
+    <!-- 轮播图 -->
+    <div class="banner"></div>
+    <!-- 商标 -->
+    <div class="brand"></div>
+    <!-- 热销报款推荐 -->
+    <div class="hot-recommend"></div>
+
+    <!-- 新品来袭 -->
+    <div class="new"></div>
+
+    <!-- 秋冬服饰 -->
+    <div class="winter-clothing"></div>
+
+    <!-- 分类图片 -->
+    <div class="class-img"></div>
+
+    <!-- 楼层组件 -->
+    <div class="floor">
+
+    </div>
+
+    <!-- 商标 -->
+    <div class="brand"></div>
+
+    <!-- 名牌图片 -->
+    <div class="famous-brand"></div>
+
+    <!-- 商品分类区域 -->
+    <div class="commodity-class"></div>
+  </div>
+
+  <!-- 底部区域 -->
+  <footer>
+    <!-- 底部区域上方 -->
+    <div class="footbrand">
+      <a class="nike"><span></span>耐克</a>
+      <a class="adidas"><span></span>阿迪达斯</a>
+      <a class="syc"><span></span>三叶草</a>
+      <a class="neo"><span></span>NEO</a>
+      <a class="nb"><span></span>新百伦</a>
+      <a class="converse"><span></span>匡威</a>
+      <a class="skq last"><span></span>斯凯奇</a>
+      <a class="puma"><span></span>彪马</a>
+      <a class="asics"><span></span>亚瑟士</a>
+      <a class="lining"><span></span>李宁</a>
+      <a class="nike_tx"><span></span>耐克童鞋</a>
+      <a class="adidas_tx"><span></span>阿迪童鞋</a>
+    </div>
+
+    <!-- 底部区域下方 -->
+    <div class="footer-bottom"></div>
+  </footer>
+
+
+  <script src="./js/index.js" type="module"></script>
 </body>
 
 </html>

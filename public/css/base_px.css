@@ -69,11 +69,11 @@ a {
 
 
 /*2.添加公共样式*/
-/*body {
-    font:12px Arial,Verdana,"\5b8b\4f53";
-    color:#666;
-    background:#fff;
-}*/
+body {
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #333;
+    background: #fff;
+}
 
 /*清除浮动（不管）*/
 .clearfix:after {
@@ -118,7 +118,7 @@ em {
 /*公共类*/
 .container {
     /*内容、版心 提取 */
-    width: 1200px;
+    width: 990px;
     margin: 0 auto;
 }
 

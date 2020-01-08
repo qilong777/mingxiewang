@@ -1,0 +1,1087 @@
+[
+  {
+    "title": "运动休闲鞋",
+    "data": [
+      {
+        "hasBg": true,
+        "title": "运动男鞋",
+        "x": -22,
+        "y": -24,
+        "list": [
+          {
+            "isRed": false,
+            "name": "休闲鞋"
+          },
+          {
+            "isRed": true,
+            "name": "训练鞋"
+          },
+          {
+            "isRed": false,
+            "name": "帆布鞋"
+          },
+          {
+            "isRed": false,
+            "name": "板鞋"
+          },
+          {
+            "isRed": false,
+            "name": "网球鞋"
+          }
+        ]
+      },
+      {
+        "hasBg": true,
+        "title": "运动女鞋",
+        "x": -22,
+        "y": -71,
+        "list": [
+          {
+            "isRed": false,
+            "name": "休闲鞋"
+          },
+          {
+            "isRed": true,
+            "name": "训练鞋"
+          },
+          {
+            "isRed": false,
+            "name": "健步鞋"
+          },
+          {
+            "isRed": false,
+            "name": "帆布鞋"
+          },
+          {
+            "isRed": false,
+            "name": "板鞋"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "搜索热词",
+        "list": [
+          {
+            "isRed": false,
+            "name": "2017新品"
+          },
+          {
+            "isRed": false,
+            "name": "小白鞋"
+          },
+          {
+            "isRed": false,
+            "name": "情侣款"
+          },
+          {
+            "isRed": false,
+            "name": "内增高"
+          },
+          {
+            "isRed": false,
+            "name": "复古鞋"
+          },
+          {
+            "isRed": false,
+            "name": "匡威帆布鞋"
+          },
+          {
+            "isRed": false,
+            "name": "三叶草"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "热门系列",
+        "list": [
+          {
+            "isRed": false,
+            "name": "新百伦574"
+          },
+          {
+            "isRed": false,
+            "name": "air"
+          },
+          {
+            "isRed": false,
+            "name": "max"
+          },
+          {
+            "isRed": false,
+            "name": "三叶草ZX"
+          },
+          {
+            "isRed": false,
+            "name": "All"
+          },
+          {
+            "isRed": false,
+            "name": "star"
+          },
+          {
+            "isRed": false,
+            "name": "开口笑"
+          },
+          {
+            "isRed": false,
+            "name": "boost"
+          },
+          {
+            "isRed": false,
+            "name": "阿甘鞋"
+          },
+          {
+            "isRed": false,
+            "name": "996系列"
+          },
+          {
+            "isRed": false,
+            "name": "彪马休闲鞋"
+          },
+          {
+            "isRed": false,
+            "name": "匡威CONS"
+          },
+          {
+            "isRed": false,
+            "name": "ROSHERUN"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "运动休闲服",
+    "data": [
+      {
+        "hasBg": true,
+        "title": "男子运动服",
+        "x": -23,
+        "y": -118,
+        "list": [
+          {
+            "isRed": false,
+            "name": "长袖T恤"
+          },
+          {
+            "isRed": false,
+            "name": "卫衣"
+          },
+          {
+            "isRed": false,
+            "name": "夹克"
+          },
+          {
+            "isRed": false,
+            "name": "运动长裤"
+          },
+          {
+            "isRed": false,
+            "name": "外套"
+          }
+        ]
+      },
+      {
+        "hasBg": true,
+        "title": "女子运动服",
+        "x": -23,
+        "y": -165,
+        "list": [
+          {
+            "isRed": false,
+            "name": "长袖T恤"
+          },
+          {
+            "isRed": false,
+            "name": "卫衣"
+          },
+          {
+            "isRed": false,
+            "name": "运动长裤"
+          },
+          {
+            "isRed": false,
+            "name": "外套"
+          },
+          {
+            "isRed": false,
+            "name": "夹克"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "热门搜索",
+        "list": [
+          {
+            "isRed": false,
+            "name": "鹿晗同款"
+          },
+          {
+            "isRed": false,
+            "name": "2017新品"
+          },
+          {
+            "isRed": false,
+            "name": "彭于晏同款"
+          },
+          {
+            "isRed": false,
+            "name": "棒球服"
+          },
+          {
+            "isRed": false,
+            "name": "三条纹"
+          },
+          {
+            "isRed": false,
+            "name": "三叶草服装"
+          },
+          {
+            "isRed": false,
+            "name": "NEO服装"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "跑步",
+    "data": [
+      {
+        "hasBg": true,
+        "title": "男子跑步",
+        "x": -23,
+        "y": -212,
+        "list": [
+          {
+            "isRed": false,
+            "name": "长袖T恤"
+          },
+          {
+            "isRed": false,
+            "name": "跑步鞋"
+          },
+          {
+            "isRed": false,
+            "name": "跑步裤"
+          },
+          {
+            "isRed": false,
+            "name": "外套夹克"
+          },
+          {
+            "isRed": false,
+            "name": "配件"
+          }
+        ]
+      },
+      {
+        "hasBg": true,
+        "title": "女子跑步",
+        "x": -23,
+        "y": -258,
+        "list": [
+          {
+            "isRed": false,
+            "name": "长袖T恤"
+          },
+          {
+            "isRed": false,
+            "name": "跑步鞋"
+          },
+          {
+            "isRed": false,
+            "name": "跑步裤"
+          },
+          {
+            "isRed": false,
+            "name": "外套夹克"
+          },
+          {
+            "isRed": false,
+            "name": "运动胸衣"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "热门搜索",
+        "list": [
+          {
+            "isRed": false,
+            "name": "2017新品"
+          },
+          {
+            "isRed": false,
+            "name": "耐克"
+          },
+          {
+            "isRed": false,
+            "name": "阿迪达斯"
+          },
+          {
+            "isRed": false,
+            "name": "新百伦"
+          },
+          {
+            "isRed": false,
+            "name": "彪马"
+          },
+          {
+            "isRed": false,
+            "name": "亚瑟士"
+          },
+          {
+            "isRed": false,
+            "name": "斯凯奇"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "热门系列",
+        "list": [
+          {
+            "isRed": false,
+            "name": "Air"
+          },
+          {
+            "isRed": false,
+            "name": "Max"
+          },
+          {
+            "isRed": false,
+            "name": "boost"
+          },
+          {
+            "isRed": false,
+            "name": "亚瑟士竞速"
+          },
+          {
+            "isRed": false,
+            "name": "Clima"
+          },
+          {
+            "isRed": false,
+            "name": "耐克登月"
+          },
+          {
+            "isRed": false,
+            "name": "新百伦慢跑"
+          },
+          {
+            "isRed": false,
+            "name": "耐克Zoom"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "篮球",
+    "data": [
+      {
+        "hasBg": true,
+        "title": "篮球",
+        "x": -22,
+        "y": -308,
+        "list": [
+          {
+            "isRed": false,
+            "name": "2017新品"
+          },
+          {
+            "isRed": false,
+            "name": "篮球鞋"
+          },
+          {
+            "isRed": false,
+            "name": "运动裤"
+          },
+          {
+            "isRed": false,
+            "name": "比赛服"
+          },
+          {
+            "isRed": false,
+            "name": "高帮"
+          },
+          {
+            "isRed": false,
+            "name": "低帮"
+          },
+          {
+            "isRed": false,
+            "name": "减震"
+          },
+          {
+            "isRed": false,
+            "name": "NBA"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "明星系列",
+        "list": [
+          {
+            "isRed": false,
+            "name": "乔丹"
+          },
+          {
+            "isRed": false,
+            "name": "中国年"
+          },
+          {
+            "isRed": false,
+            "name": "zoom"
+          },
+          {
+            "isRed": false,
+            "name": "air"
+          },
+          {
+            "isRed": false,
+            "name": "max"
+          },
+          {
+            "isRed": false,
+            "name": "科比"
+          },
+          {
+            "isRed": false,
+            "name": "詹姆斯"
+          },
+          {
+            "isRed": false,
+            "name": "罗斯"
+          },
+          {
+            "isRed": false,
+            "name": "杜兰特"
+          },
+          {
+            "isRed": false,
+            "name": "利拉德"
+          },
+          {
+            "isRed": false,
+            "name": "韦德"
+          },
+          {
+            "isRed": false,
+            "name": "安踏霸道"
+          },
+          {
+            "isRed": false,
+            "name": "汤普森"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "热搜品牌",
+        "list": [
+          {
+            "isRed": false,
+            "name": "阿迪达斯"
+          },
+          {
+            "isRed": false,
+            "name": "耐克"
+          },
+          {
+            "isRed": false,
+            "name": "李宁"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "足球",
+    "data": [
+      {
+        "hasBg": true,
+        "title": "足球",
+        "x": -23,
+        "y": -258,
+        "list": [
+          {
+            "isRed": false,
+            "name": "足球鞋"
+          },
+          {
+            "isRed": false,
+            "name": "足球服"
+          },
+          {
+            "isRed": false,
+            "name": "护腿板"
+          },
+          {
+            "isRed": false,
+            "name": "足球"
+          },
+          {
+            "isRed": false,
+            "name": "速干衣"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "系列",
+        "list": [
+          {
+            "isRed": false,
+            "name": "ACE"
+          },
+          {
+            "isRed": false,
+            "name": "TIEMPO"
+          },
+          {
+            "isRed": false,
+            "name": "毒蜂"
+          },
+          {
+            "isRed": false,
+            "name": "彪马SPEED"
+          },
+          {
+            "isRed": false,
+            "name": "刺客"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "鞋钉",
+        "list": [
+          {
+            "isRed": false,
+            "name": "FG"
+          },
+          {
+            "isRed": false,
+            "name": "AG"
+          },
+          {
+            "isRed": false,
+            "name": "TF"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "热搜品牌",
+        "list": [
+          {
+            "isRed": false,
+            "name": "耐克"
+          },
+          {
+            "isRed": false,
+            "name": "阿迪达斯"
+          },
+          {
+            "isRed": false,
+            "name": "彪马"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "宝宝/配件",
+    "data": [
+      {
+        "hasBg": true,
+        "title": "包包",
+        "x": -23,
+        "y": -258,
+        "list": [
+          {
+            "isRed": false,
+            "name": "腰包"
+          },
+          {
+            "isRed": false,
+            "name": "双肩包"
+          },
+          {
+            "isRed": false,
+            "name": "单肩包"
+          },
+          {
+            "isRed": false,
+            "name": "手拎包"
+          },
+          {
+            "isRed": false,
+            "name": "手臂包"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "配件",
+        "list": [
+          {
+            "isRed": false,
+            "name": "袜子"
+          },
+          {
+            "isRed": false,
+            "name": "护腿板"
+          },
+          {
+            "isRed": false,
+            "name": "足球"
+          },
+          {
+            "isRed": false,
+            "name": "手套"
+          },
+          {
+            "isRed": false,
+            "name": "帽子"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "热搜品牌",
+        "list": [
+          {
+            "isRed": false,
+            "name": "耐克"
+          },
+          {
+            "isRed": false,
+            "name": "阿迪达斯"
+          },
+          {
+            "isRed": false,
+            "name": "匡威"
+          },
+          {
+            "isRed": false,
+            "name": "NEO"
+          },
+          {
+            "isRed": false,
+            "name": "彪马"
+          },
+          {
+            "isRed": false,
+            "name": "李宁"
+          },
+          {
+            "isRed": false,
+            "name": "锐步"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "搜索热词",
+        "list": [
+          {
+            "isRed": false,
+            "name": "2017新品"
+          },
+          {
+            "isRed": false,
+            "name": "运动休闲"
+          },
+          {
+            "isRed": false,
+            "name": "三条纹"
+          },
+          {
+            "isRed": false,
+            "name": "法拉利"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "户外",
+    "data": [
+      {
+        "hasBg": true,
+        "title": "户外鞋",
+        "x": -23,
+        "y": -258,
+        "list": [
+          {
+            "isRed": false,
+            "name": "徒步鞋"
+          },
+          {
+            "isRed": false,
+            "name": "登山鞋"
+          },
+          {
+            "isRed": false,
+            "name": "溯溪鞋"
+          },
+          {
+            "isRed": false,
+            "name": "跑步鞋"
+          },
+          {
+            "isRed": false,
+            "name": "营地鞋"
+          }
+        ]
+      },
+      {
+        "hasBg": true,
+        "title": "户外服",
+        "x": -23,
+        "y": -258,
+        "list": [
+          {
+            "isRed": false,
+            "name": "卫衣"
+          },
+          {
+            "isRed": false,
+            "name": "抓绒服"
+          },
+          {
+            "isRed": false,
+            "name": "冲锋衣"
+          },
+          {
+            "isRed": false,
+            "name": "皮肤衣"
+          },
+          {
+            "isRed": false,
+            "name": "风衣"
+          },
+          {
+            "isRed": false,
+            "name": "冲锋裤"
+          },
+          {
+            "isRed": false,
+            "name": "休闲裤"
+          },
+          {
+            "isRed": false,
+            "name": "旅行裤"
+          },
+          {
+            "isRed": false,
+            "name": "越野裤"
+          }
+        ]
+      },
+      {
+        "hasBg": true,
+        "title": "户外配件",
+        "x": -23,
+        "y": -258,
+        "list": [
+          {
+            "isRed": false,
+            "name": "双肩包"
+          },
+          {
+            "isRed": false,
+            "name": "单肩包"
+          },
+          {
+            "isRed": false,
+            "name": "腰包"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "热搜品牌",
+        "list": [
+          {
+            "isRed": false,
+            "name": "探路者"
+          },
+          {
+            "isRed": false,
+            "name": "阿迪达斯"
+          },
+          {
+            "isRed": false,
+            "name": "discovery"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "男鞋",
+    "data": [
+      {
+        "hasBg": true,
+        "title": "男鞋",
+        "x": -23,
+        "y": -258,
+        "list": [
+          {
+            "isRed": false,
+            "name": "休闲皮鞋"
+          },
+          {
+            "isRed": false,
+            "name": "正装皮鞋"
+          },
+          {
+            "isRed": false,
+            "name": "豆豆鞋"
+          },
+          {
+            "isRed": false,
+            "name": "布洛克"
+          },
+          {
+            "isRed": false,
+            "name": "帆船鞋"
+          },
+          {
+            "isRed": false,
+            "name": "休闲鞋"
+          },
+          {
+            "isRed": false,
+            "name": "时尚潮鞋"
+          },
+          {
+            "isRed": false,
+            "name": "工装鞋"
+          },
+          {
+            "isRed": false,
+            "name": "凉鞋"
+          }
+        ]
+      },
+      {
+        "hasBg": true,
+        "title": "女鞋",
+        "x": -23,
+        "y": -258,
+        "list": [
+          {
+            "isRed": false,
+            "name": "单鞋"
+          },
+          {
+            "isRed": false,
+            "name": "豆豆鞋"
+          },
+          {
+            "isRed": false,
+            "name": "休闲鞋"
+          },
+          {
+            "isRed": false,
+            "name": "健步鞋"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "热词/系列",
+        "list": [
+          {
+            "isRed": false,
+            "name": "冬季新品"
+          },
+          {
+            "isRed": false,
+            "name": "熊猫鞋"
+          },
+          {
+            "isRed": false,
+            "name": "Go系列"
+          },
+          {
+            "isRed": false,
+            "name": "一脚蹬"
+          },
+          {
+            "isRed": false,
+            "name": "平底鞋"
+          },
+          {
+            "isRed": false,
+            "name": "高跟鞋"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "热搜品牌",
+        "list": [
+          {
+            "isRed": false,
+            "name": "星期六"
+          },
+          {
+            "isRed": false,
+            "name": "朗蒂维"
+          },
+          {
+            "isRed": false,
+            "name": "奥康"
+          },
+          {
+            "isRed": false,
+            "name": "骆驼"
+          },
+          {
+            "isRed": false,
+            "name": "斯凯奇"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "男鞋",
+    "data": [
+      {
+        "hasBg": true,
+        "title": "男鞋",
+        "x": -23,
+        "y": -258,
+        "list": [
+          {
+            "isRed": false,
+            "name": "休闲皮鞋"
+          },
+          {
+            "isRed": false,
+            "name": "正装皮鞋"
+          },
+          {
+            "isRed": false,
+            "name": "豆豆鞋"
+          },
+          {
+            "isRed": false,
+            "name": "布洛克"
+          },
+          {
+            "isRed": false,
+            "name": "帆船鞋"
+          },
+          {
+            "isRed": false,
+            "name": "休闲鞋"
+          },
+          {
+            "isRed": false,
+            "name": "时尚潮鞋"
+          },
+          {
+            "isRed": false,
+            "name": "工装鞋"
+          },
+          {
+            "isRed": false,
+            "name": "凉鞋"
+          }
+        ]
+      },
+      {
+        "hasBg": true,
+        "title": "女鞋",
+        "x": -23,
+        "y": -258,
+        "list": [
+          {
+            "isRed": false,
+            "name": "单鞋"
+          },
+          {
+            "isRed": false,
+            "name": "豆豆鞋"
+          },
+          {
+            "isRed": false,
+            "name": "休闲鞋"
+          },
+          {
+            "isRed": false,
+            "name": "健步鞋"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "热词/系列",
+        "list": [
+          {
+            "isRed": false,
+            "name": "冬季新品"
+          },
+          {
+            "isRed": false,
+            "name": "熊猫鞋"
+          },
+          {
+            "isRed": false,
+            "name": "Go系列"
+          },
+          {
+            "isRed": false,
+            "name": "一脚蹬"
+          },
+          {
+            "isRed": false,
+            "name": "平底鞋"
+          },
+          {
+            "isRed": false,
+            "name": "高跟鞋"
+          }
+        ]
+      },
+      {
+        "hasBg": false,
+        "title": "热搜品牌",
+        "list": [
+          {
+            "isRed": false,
+            "name": "星期六"
+          },
+          {
+            "isRed": false,
+            "name": "朗蒂维"
+          },
+          {
+            "isRed": false,
+            "name": "奥康"
+          },
+          {
+            "isRed": false,
+            "name": "骆驼"
+          },
+          {
+            "isRed": false,
+            "name": "斯凯奇"
+          }
+        ]
+      }
+    ]
+  }
+]

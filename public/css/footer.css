@@ -1,0 +1,71 @@
+.footbrand {
+  width: 757px;
+  background: #fff;
+  overflow: hidden;
+  padding-bottom: 1px;
+  margin: 0 auto;
+  height: 142px;
+}
+
+.footbrand a {
+  color: #333;
+  border: 1px solid #DFDFDF;
+  display: block;
+  float: left;
+  height: 70px;
+  margin: 0 -1px -1px 0;
+  overflow: hidden;
+  position: relative;
+  text-indent: -999px;
+  width: 125px;
+  background: url("//images.s.cn/images/css/default_brandwall_bg11.png") no-repeat 0 0;
+  cursor: pointer;
+}
+
+.footbrand a.nike {
+  background-position: 36px -176px;
+}
+
+.footbrand a.adidas {
+  background-position: -88px -176px;
+}
+
+.footbrand a.syc {
+  background-position: -699px -330px;
+}
+
+.footbrand a.neo {
+  background-position: -824px -328px;
+}
+
+.footbrand a.nb {
+  background-position: -574px -176px;
+}
+
+.footbrand a.converse {
+  background-position: -582px -10px;
+}
+
+.footbrand a.skq {
+  background-position: -578px -257px;
+}
+
+.footbrand a.puma {
+  background-position: -821px -176px;
+}
+
+.footbrand a.asics {
+  background-position: -451px -331px;
+}
+
+.footbrand a.lining {
+  background-position: -211px -176px;
+}
+
+.footbrand a.nike_tx {
+  background-position: -211px -491px;
+}
+
+.footbrand a.adidas_tx {
+  background-position: -334px -491px;
+}
