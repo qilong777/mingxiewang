@@ -68,6 +68,239 @@
       background-position: -334px -491px;
     }
 
+    span {
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      -webkit-transition: background-color 0.3s ease 0s;
+      transition: background-color 0.3s ease 0s;
+      visibility: hidden;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    &:hover span {
+      background: #000;
+      opacity: 0.1;
+      filter: alpha(opacity=10);
+      visibility: visible;
+    }
   }
 
+}
+
+.btmfenlei_hd {
+  position: relative;
+  height: 36px;
+  width: 990px;
+  margin: 0 auto 28px;
+  clear: both;
+  border-bottom: 1px solid #ccc;
+
+  h3 {
+    font-size: 18px;
+    font-family: microsoft yahei;
+    position: absolute;
+    left: 50%;
+    margin: 12px 0 0 -60px;
+    background: #fff;
+    padding: 10px 20px;
+    font-weight: 100;
+  }
+}
+
+
+.btmfenlei_body {
+  width: 990px;
+  margin: 0 auto 15px;
+  font-family: microsoft yahei;
+  overflow: hidden;
+
+  a:hover {
+    color: #c00;
+    text-decoration: underline;
+  }
+
+  dl {
+    float: left;
+    width: 245px;
+    padding-right: 2px;
+
+  }
+
+  dt {
+    text-align: center;
+
+    a {
+      color: #222;
+
+      s {
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+        font-style: normal;
+        text-decoration: none;
+      }
+    }
+  }
+
+  dd {
+    border-right: 1px dotted #ccc;
+    height: 85px;
+    overflow: hidden;
+    padding: 0 10px 0 15px;
+
+    a {
+      float: left;
+      color: #555;
+      margin-bottom: 10px;
+      white-space: nowrap;
+      width: 54px;
+      font-size: 12px;
+      text-decoration: none;
+    }
+  }
+}
+
+
+.foot {
+  border-top: 2px solid #ce3c3b;
+  background: #f8f8f8;
+
+  .row {
+    padding: 15px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #e8e8e8;
+
+    .ewm {
+      position: relative;
+      float: left;
+      height: 195px;
+      width: 220px;
+      border-right: 1px solid #dedede;
+    }
+
+    .ftli {
+      border-left: 1px solid #fff;
+      height: 195px;
+      padding-left: 40px;
+      float: left;
+      line-height: 1.6em;
+
+      li {
+        float: left;
+        width: 186px;
+
+        h6 {
+          height: 36px;
+          margin: 5px 0 25px;
+          color: #111;
+
+          a:hover {
+            zoom: 1;
+            filter: alpha(opacity=80);
+            opacity: 0.8;
+          }
+        }
+
+        h5 {
+          margin: 0 0 6px;
+          font-size: 14px;
+          color: #666;
+          font-family: '宋体';
+          font-weight: bold;
+        }
+
+        .c999 a {
+          color: #999;
+
+          &:hover {
+            color: #c00;
+            text-decoration: underline;
+          }
+        }
+
+        &.last {
+          width: 156px;
+        }
+      }
+    }
+  }
+
+
+  .row2 {
+    text-align: center;
+    padding: 20px 0;
+
+    span {
+      color: #ccc;
+      font-family: '宋体';
+    }
+
+    a {
+      color: #777;
+
+      &:hover {
+        color: #f40;
+        text-decoration: underline;
+      }
+    }
+
+    s {
+      font-size: 20px;
+      color: #c00;
+      font-weight: 700;
+    }
+  }
+
+  .row3 {
+    width: 640px;
+    height: 50px;
+    margin: 0 auto 30px;
+
+    a {
+      float: left;
+      width: 112px;
+      height: 47px;
+      margin-right: 10px;
+
+      &:hover {
+        border: 1px solid #d5d5d5;
+        width: 110px;
+        height: 45px;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+
+.rolling {
+  width: 990px;
+  border-bottom: 1px dashed #CCCCCC;
+  border-top: 1px dashed #CCCCCC;
+  height: 20px;
+  padding: 5px;
+  margin: 0 auto;
+
+  h4 {
+    float: left;
+    color: #999;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 20px;
+  }
+
+  a {
+    color: #999;
+    float: left;
+    padding: 0 5px;
+    white-space: nowrap;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

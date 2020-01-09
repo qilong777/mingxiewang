@@ -4,7 +4,7 @@ header {
   a {
     position: relative;
     color: #666;
-    z-index: 10;
+    // z-index: 10;
 
     &:hover {
       color: #f60;
@@ -60,7 +60,9 @@ header {
       position: relative;
       padding-right: 25px;
 
-
+      a {
+        z-index: 10;
+      }
 
       .triangle {
         z-index: 10;
@@ -79,7 +81,7 @@ header {
         border-bottom: 0;
         background: #fff;
         display: none;
-        z-index: 6;
+        z-index: 9;
       }
 
 
@@ -99,7 +101,7 @@ header {
         border: 1px solid #ccc;
         -webkit-box-shadow: 0 0 3px #ccc;
         box-shadow: 0 0 3px #ccc;
-        z-index: 999;
+        z-index: 8;
 
         // display: none;
         li {
@@ -289,6 +291,7 @@ header {
         left: 0px;
         width: 190px;
         background-color: #1e1908;
+        z-index: 10;
 
         &.active {
           display: block;

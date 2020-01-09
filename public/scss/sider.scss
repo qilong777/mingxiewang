@@ -1,0 +1,169 @@
+.sider {
+  position: fixed;
+  width: 37px;
+  height: 100%;
+  overflow: visible;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  color: #fff;
+  background-color: #000;
+  font-family: "Microsoft Yahei", "\5fae\8f6f\96c5\9ed1", "\5b8b\4f53";
+
+  .sider-logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 37px;
+    height: 35px;
+    background: url('//images.s.cn/images/css/rbar_icon.png') no-repeat;
+  }
+
+  .txt {
+    position: absolute;
+    left: 0;
+    top: 32px;
+    width: 29px;
+    padding: 0 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    line-height: 14px;
+  }
+
+  .hot-activity {
+    position: relative;
+    width: 41px;
+    height: 157px;
+    border-bottom-left-radius: 2px;
+    top: 0;
+    left: -4px;
+    cursor: pointer;
+    background-color: #BD0000;
+
+    i {
+      background-position: 7px 14px;
+    }
+
+    p {
+      width: 20px;
+      font-size: 18px;
+      line-height: 22px;
+      top: 48px;
+      left: 6px;
+    }
+  }
+
+  .brand-class {
+    position: relative;
+    height: 122px;
+    margin-top: 23px;
+    left: 0;
+    width: 37px;
+    cursor: pointer;
+    z-index: 9;
+
+    &:hover {
+      background-color: #c40000;
+    }
+
+    i {
+      background-position: 6px -29px;
+    }
+
+    p {
+      left: 8px;
+      top: 40px;
+      width: 20px;
+      line-height: 16px;
+      overflow: hidden;
+      padding: 0;
+    }
+  }
+
+  .cart {
+    position: relative;
+    left: 0;
+    width: 37px;
+    height: 35px;
+    cursor: pointer;
+    z-index: 9;
+    margin: 8px 0px;
+    background-position: 6px -77px;
+
+    &:hover {
+      background-color: #c40000;
+    }
+
+    .cart-border {
+      position: absolute;
+      top: -5px;
+      left: 5px;
+      height: 33px;
+      width: 25px;
+      border-top: 1px solid #676767;
+    }
+
+    &:hover .cart-txt {
+      display: block;
+    }
+
+    .cart-txt {
+      display: none;
+      position: absolute;
+      font-size: 12px;
+      right: 47px;
+      top: 0px;
+      width: 90px;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      color: #fff;
+      background-color: #494949;
+      -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+      box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+      border-radius: 2px;
+
+      .jian {
+        position: absolute;
+        top: 10px;
+        right: -8px;
+        color: #494949;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        text-align: center;
+        font-size: 16px;
+        font-family: "\5b8b\4f53";
+      }
+    }
+  }
+
+  .order {
+    background-position: 10px -119px;
+  }
+
+  .star,
+  .zhuan,
+  .to-top {
+    position: absolute;
+    top: auto;
+    bottom: 90px;
+    left: 0;
+    background-position: 7px -218px;
+  }
+
+  .zhuan {
+    bottom: 50px;
+    background-position: 8px -273px;
+  }
+
+  .to-top {
+    bottom: 10px;
+    background-position: 7px -324px;
+
+    &.is-top {
+      display: none;
+    }
+  }
+}

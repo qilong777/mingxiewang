@@ -1,0 +1,65 @@
+<div class="hot-activity"><i class="sider-logo"></i>
+  <p class="txt">热门活动</p>
+</div>
+<div class="brand-class"><i class="sider-logo"></i>
+  <p class="txt">品牌分类</p>
+</div>
+<div class="cart sider-logo">
+  <div class="cart-border"></div>
+  <div class="cart-txt">购物车<div class="jian">◆</div>
+  </div>
+</div>
+<div class="cart order sider-logo">
+  <div class="cart-txt">我的订单<div class="jian">◆</div>
+  </div>
+</div>
+<div class="cart star sider-logo">
+  <div class="cart-txt">我的收藏<div class="jian">◆</div>
+  </div>
+</div>
+<div class="cart zhuan sider-logo">
+  <div class="cart-txt">转发<div class="jian">◆</div>
+  </div>
+</div>
+<div class="cart to-top sider-logo">
+  <div class="cart-txt">返回顶部<div class="jian">◆</div>
+  </div>
+</div>
+<script>
+  $(function () {
+    let toTopBtn = $(".to-top");
+    let timer = null;
+    $(".cart").hover(function () {
+      $(this).children(".cart-txt").stop().animate({
+        right: "37px"
+      }, 300)
+    }, function () {
+      $(this).children(".cart-txt").stop().animate({
+        right: "47px"
+      }, 300)
+    })
+    $(window).scroll(function () {
+      if (scrollY == 0) {
+        toTopBtn.addClass("is-top");
+      } else {
+        toTopBtn.removeClass("is-top");
+      }
+    })
+    toTopBtn.click(function () {
+      let y = scrollY;
+      let speed = scrollY / 150;
+      speed = speed < 10 ? 10 : speed;
+      timer = setInterval(function () {
+        if (scrollY != 0) {
+          scrollBy(0, -speed);
+        } else {
+          clearInterval(timer);
+          timer = null;
+        }
+      }, 4)
+    })
+  })
+
+
+
+</script>

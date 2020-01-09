@@ -1,0 +1,145 @@
+.main {
+  background: #8e0a18;
+}
+
+.banner {
+  width: 990px;
+  height: 710px;
+  margin: 0 auto;
+  position: relative;
+  background: #EEE;
+  z-index: 1;
+}
+
+.banner .img {
+  position: absolute;
+  width: 1920px;
+  height: 710px;
+  left: -465px;
+  top: 0;
+}
+
+.banner .img li {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.banner .img li.active {
+  opacity: 1;
+}
+
+.banner .btn-list {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 19;
+}
+
+.banner .btn-list li {
+  float: left;
+  width: 14px;
+  height: 14px;
+  text-indent: -99px;
+  overflow: hidden;
+  background: #B5B5B5;
+  border-radius: 50%;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.banner .btn-list li.active {
+  background: #C80002;
+}
+
+.brand-img img,
+.hot-recommend img,
+.new img,
+.winter-clothing img,
+.hot-sell img,
+.class-img img {
+  width: 1920px;
+  margin-left: -465px;
+}
+
+.floors .floor > img {
+  width: 1920px;
+  margin-left: -465px;
+}
+
+.floors .floor .data-list {
+  width: 990px;
+}
+
+.floors .floor .data-list li {
+  float: left;
+  width: 237px;
+  margin: 10px 5px;
+  background-color: #fff;
+}
+
+.floors .floor .data-list li:hover a {
+  border: 1px solid #f40;
+}
+
+.floors .floor .data-list li a {
+  display: block;
+  padding: 1px;
+  border: 1px solid #eee;
+}
+
+.floors .floor .data-list li a img {
+  display: block;
+  height: 210px;
+  width: 210px;
+  margin: 0 auto;
+}
+
+.floors .floor .data-list li div {
+  width: 233px;
+  border-top: none;
+  padding: 0 0 4px 0;
+  height: auto;
+}
+
+.floors .floor .data-list li div .p1 {
+  height: 36px;
+  line-height: 18px;
+  padding-top: 4px;
+}
+
+.floors .floor .data-list li div .p2 {
+  height: 22px;
+  line-height: 22px;
+  padding-left: 3px;
+  position: relative;
+}
+
+.floors .floor .data-list li div .p2 .price {
+  padding-right: .3rem;
+  font-size: 18px;
+  font-family: 'Microsoft Yahei';
+  font-weight: 700;
+  color: #f00;
+}
+
+.floors .floor .data-list li div .p2 del {
+  font-family: verdana;
+  color: #000;
+}
+
+.floors .floor .data-list li div .p2 .btn {
+  display: block;
+  width: 65px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  color: #fff;
+  background: #000;
+  position: absolute;
+  right: 3px;
+  bottom: 2px;
+}
