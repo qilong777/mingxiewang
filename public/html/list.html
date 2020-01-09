@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>商品列表</title>
+  <link rel="stylesheet" href="../css/base_px.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/sider.css">
+  <link rel="stylesheet" href="../css/list.css">
+  <script src="../js/jquery-3.4.0.js"></script>
+  <script src="../js/Cookie.js"></script>
+  <script src="../js/template.js"></script>
+  <script src="../js/header.js" type="module"></script>
+</head>
+
+<body>
+  <header></header>
+  <div class="sider"></div>
+  <main class="main container">
+    <div class="navigation">
+      你当前的位置:<span>休闲鞋</span>
+    </div>
+    <div class="bar">
+      <p>
+        休闲鞋
+        <span>（共有<i>50</i>个商品）</span>
+      </p>
+    </div>
+    <!-- 筛选框 -->
+    <div class="filter-box">
+      <div class="select">
+        你已选择:
+        <a href="#" class="selected">
+          <h6>类别:休闲鞋</h6><i></i>
+        </a>
+        <a href="#" class="reselect">重新筛选</a>
+      </div>
+      <div class="nselect">
+        <dl class="brand clearfix">
+          <div class="more-select">多选</div>
+          <dt>品牌：</dt>
+          <dd><a href="#" class="nike">耐克<i></i></a></dd>
+          <dd><a href="#" class="newbalance">New Blance<i></i></a></dd>
+          <dd><a href="#" class="nike">耐克<i></i></a></dd>
+          <dd><a href="#" class="newbalance">New Blance<i></i></a></dd>
+          <dd><a href="#" class="nike">耐克<i></i></a></dd>
+          <dd><a href="#" class="newbalance">New Blance<i></i></a></dd>
+          <dd><a href="#" class="nike">耐克<i></i></a></dd>
+          <dd><a href="#" class="newbalance">New Blance<i></i></a></dd>
+          <dd><a href="#" class="nike">耐克<i></i></a></dd>
+          <dd><a href="#" class="newbalance">New Blance<i></i></a></dd>
+        </dl>
+
+        <dl class="select_dl clearfix">
+          <div class="more-select">多选</div>
+          <dt><span>性别：</span></dt>
+          <dd>
+            <a href="#">男<i><span>(38)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">女<i><span>(53)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">情侣<i><span>(14)</span></i></a>
+          </dd>
+          <div class="more_open_act" style="display: none;" id="f_sex_div"> <i class="more_nosub">提交</i> <i
+              class="more_sub" style="display: none;" onclick="submoredd('f_sex',0)">提交</i> <i class="more_close"
+              onclick="closemoredd('f_sex',3,1)">取消</i> </div>
+        </dl>
+
+        <dl class="select_dl clearfix">
+          <div class="more-select">多选</div>
+          <dt><span>尺码：</span></dt>
+          <dd>
+            <a href="#">35<i><span>(22)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">35.5<i><span>(8)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">36<i><span>(40)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">36.5<i><span>(8)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">37<i><span>(24)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">37.5<i><span>(17)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">38<i><span>(31)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">38.5<i><span>(5)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">39<i><span>(34)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">39.5<i><span>(18)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">40<i><span>(15)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">40.5<i><span>(10)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">41<i><span>(13)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">41.5<i><span>(12)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">42<i><span>(16)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">42.5<i><span>(18)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">43<i><span>(12)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">43.5<i><span>(11)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">44<i><span>(24)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">44.5<i><span>(3)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">45<i><span>(1)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">46<i><span>(1)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">19.5<i><span>(1)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">20.5<i><span>(1)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">21.5<i><span>(2)</span></i></a>
+          </dd>
+          <dd>
+            <a href="#">22.5<i><span>(5)</span></i></a>
+          </dd>
+        </dl>
+
+        <dl class="select_dl clearfix" style="display: none;">
+          <div class="more-select">多选</div>
+          <dt><span>价格：</span></dt>
+          <dd><a href="#">0-99元<i><span>(7)</span></i></a>
+          </dd>
+          <dd><a href="#">100-199元<i><span>(19)</span></i></a>
+          </dd>
+          <dd><a href="#">200-299元<i><span>(21)</span></i></a>
+          </dd>
+          <dd><a href="#">300-399元<i><span>(27)</span></i></a>
+          </dd>
+          <dd><a href="#">400-499元<i><span>(20)</span></i></a>
+          </dd>
+          <dd><a href="#">500-599元<i><span>(8)</span></i></a>
+          </dd>
+          <dd><a href="#">600-699元<i><span>(1)</span></i></a>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <a href="#" class="oc-btn"><span>展开</span><i></i></a>
+
+    <div class="list-wrapper">
+
+      <!-- 商品列表 -->
+      <ul class="list container clearfix">
+      </ul>
+
+      <!-- 分页按钮 -->
+      <div class="page-btn-box clearfix">
+        <ul class="page-btns">
+
+        </ul>
+      </div>
+    </div>
+
+
+  </main>
+  <footer></footer>
+  <script src="../js/list.js" type="module"></script>
+</body>
+
+</html>

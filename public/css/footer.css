@@ -1,4 +1,8 @@
 @charset "UTF-8";
+footer {
+  margin-top: 30px;
+}
+
 .footbrand {
   width: 757px;
   background: #fff;

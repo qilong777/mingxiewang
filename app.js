@@ -3,6 +3,7 @@ const app = express();
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const userRouter = require('./router/userRouter.js');
+const commodityRouter = require('./router/commodityRouter.js');
 // const bodyParser = require("body-parser");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
@@ -23,7 +24,7 @@ app.use(cookieParser());
 
 
 app.use("/users", userRouter);
-
+app.use("/commodities", commodityRouter);
 
 app.listen(80, () => {
   console.log("服务器已开启");

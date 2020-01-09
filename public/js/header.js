@@ -75,7 +75,7 @@ class Tab1 {
   renderUI() {
     let html = `
     <ul>
-      <li class="active"><a href="#" class="first item">首页</a></li>
+      <li class="active"><a href="http://localhost" class="first item">首页</a></li>
       {{each $data}}
       <li class="li-item">
         <a href="#" class="item">{{$value.title}}</a>
