@@ -12,6 +12,16 @@ $(function () {
     $.getJSON("./data/data2.json", function (data) {
       new Tab1(data, el1).init();
     });
+    $.get({
+      url: "http://localhost/users/islogined",
+      success(res) {
+        if (res.status == 1)
+          $(".logined").css("display", "block");
+        else {
+          $(".no-login").css("display", "block");
+        }
+      }
+    })
   });
 
   //底部

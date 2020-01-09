@@ -14,18 +14,19 @@
 <body>
   <header class="header container clearfix">
     <div class="header-list1">
-      <h2 class="header-logo"><a href="http://www.360kad.com"><img
-            src="https://res.360kad.com/theme/user/img/login_logo.jpg"></a></h2>
+      <h2 class="header-logo"><a href="http://www.360kad.com">
+          <img alt="欢迎来到名鞋库网上鞋城!" src="//images.s.cn/images/css/newlogo.png">
+        </a>
+      </h2>
       <p class="header-notice"><img src="https://res.360kad.com/theme/default/img/user/2015/autoSlogo.gif"></p>
     </div>
-    <p class="header-list2">欢迎注册</p>
-    <div class="header-list3">已有账号，<a href="/login.html">立即登录&gt;</a>
+    <div class="header-list3">已有账号，<a href="./login.html">立即登录&gt;</a>
     </div>
   </header>
-  <div style="background-color: blue; height: 2px;"></div>
+  <div style="background-color: red; height: 2px;"></div>
   <main class="container main">
     <h3 class="title">
-      欢迎注册康爱多账号
+      欢迎注册名鞋网账号
     </h3>
     <div class="register-box">
       <!-- 用户名 -->
@@ -49,9 +50,21 @@
         </div>
         <p class="error">
           <i class="error-icon"></i>
-          <span class="error-text">请输入邮箱!</span>
+          <span class="error-text"></span>
         </p>
+      </div>
 
+      <!-- 密码 -->
+      <div class="input-row">
+        <div class="input-box clearfix">
+          <label for="passwordA">确&nbsp;&nbsp;认&nbsp;&nbsp;密&nbsp;&nbsp;码</label>
+          <input type="password" id="passwordA" placeholder="请再次输入密码！">
+          <p class="showPwd"><i></i></p>
+        </div>
+        <p class="error">
+          <i class="error-icon"></i>
+          <span class="error-text"></span>
+        </p>
       </div>
 
       <!-- 邮箱 -->
@@ -87,6 +100,7 @@
     $(function () {
       let username = $("#username"),
         password = $("#password"),
+        passwordA = $("#passwordA"),
         email = $("#email"),
         verify = $("#verify"),
         showPwd = $(".showPwd"),
@@ -120,13 +134,24 @@
         }
       }
 
-      //检查邮箱是否合法
-      function checkEmail() {
-        if (email.val().trim() === "") {
-          msgs.eq(2).addClass("show").children(".error-text").text("邮箱不能为空");
+      //检查确认密码框是否合法
+      function checkPasswordA() {
+        if (passwordA.val() != password.val()) {
+          msgs.eq(2).addClass("show").children(".error-text").text("两次密码不一致！");
           return false;
         } else {
           msgs.eq(2).removeClass("show");
+          return true;
+        }
+      }
+
+      //检查邮箱是否合法
+      function checkEmail() {
+        if (email.val().trim() === "") {
+          msgs.eq(3).addClass("show").children(".error-text").text("邮箱不能为空");
+          return false;
+        } else {
+          msgs.eq(3).removeClass("show");
           return true;
         }
       }
@@ -144,13 +169,14 @@
 
       //切换密码可见情况
       showPwd.click(function () {
-        let now = password.attr("type");
+        let index = $(".showPwd").index(this);
+        let now = index == 0 ? password.attr("type") : passwordA.attr("type");
         if (now == "password") {
           $(this).children("i").addClass("show-eye");
-          password.attr("type", "text");
+          $(this).prev().attr("type", "text");
         } else {
           $(this).children("i").removeClass("show-eye");
-          password.attr("type", "password");
+          $(this).prev().attr("type", "password");
         }
       })
 
@@ -158,14 +184,14 @@
       //发送邮箱验证码
       getCode.click(function () {
         if (!checkEmail()) {
-          msgs.eq(3).addClass("show").children(".error-text").text("请输入邮箱号");
+          msgs.eq(4).addClass("show").children(".error-text").text("请输入邮箱号");
           return;
         }
         if (timer) {
-          msgs.eq(3).addClass("show").children(".error-text").text("请等待30秒后在重新发送");
+          msgs.eq(4).addClass("show").children(".error-text").text("请等待30秒后在重新发送");
           return;
         }
-        msgs.eq(3).removeClass("show");
+        msgs.eq(4).removeClass("show");
         $.get({
           url: "http://localhost/users/verifyEmail?email=" + email.val(),
           success(res) {
@@ -183,7 +209,7 @@
                 }
               }, 1000);
             } else {
-              msgs.eq(3).addClass("show").children(".error-text").text(res.msg);
+              msgs.eq(4).addClass("show").children(".error-text").text(res.msg);
             }
 
           }
@@ -194,7 +220,7 @@
       //点击注册
       register.click(function (e) {
         e.preventDefault();
-        if (!checkUsername() || !checkPassword() || !checkEmail() || !checkVerify()) {
+        if (!checkUsername() || !checkPassword() || !checkPasswordA() || !checkEmail() || !checkVerify()) {
           return;
         }
         $.post({
@@ -208,15 +234,15 @@
           success(res) {
             if (res.status == 1) {
               alert("注册成功");
-              location.href = "http://localhost/login.html";
+              location.href = "http://localhost/html/login.html";
             } else if (res.status == 0) {
-              msgs.eq(3).addClass("show").children(".error-text").text(res.msg);
+              msgs.eq(4).addClass("show").children(".error-text").text(res.msg);
             } else if (res.status == -1) {
               msgs.eq(0).addClass("show").children(".error-text").text(res.msg);
             } else if (res.status == -2) {
-              msgs.eq(2).addClass("show").children(".error-text").text(res.msg);
+              msgs.eq(3).addClass("show").children(".error-text").text(res.msg);
             } else {
-              alert(res.msg)
+              alert(res.msg);
             }
           }
         })
@@ -225,6 +251,7 @@
 
       username.blur(checkUsername);
       password.blur(checkPassword);
+      passwordA.blur(checkPasswordA);
       email.blur(checkEmail);
       verify.blur(checkVerify)
 

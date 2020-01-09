@@ -3,7 +3,14 @@ const { createVerifyImg, Email } = require('../tools/base.js');
 
 //用户登录
 let login = async (req, res) => {
-  let { username, password } = req.body;
+  let { username, password, verify } = req.body;
+  if (verify != req.session.verifyImg) {
+    res.send({
+      status: -2,
+      msg: "验证码错误"
+    });
+    return;
+  }
   let sql = "select * from user where (username=? or email=?) and password=?";
   let data = [username, username, password];
   let result = await db.base(sql, data);
@@ -31,8 +38,46 @@ let login = async (req, res) => {
   }
 }
 
+//自动登录
+let autologin = async (req, res) => {
+  let userInfo = JSON.parse(req.cookies.userInfo)
+  let { username, password } = userInfo;
+  let sql = "select * from user where (username=? or email=?) and password=?";
+  let data = [username, username, password];
+  let result = await db.base(sql, data);
+
+  if (result.length == 1) {
+    req.session.username = username;
+    res.send({
+      status: 1,
+      msg: "登录成功"
+    });
+  } else {
+    res.send({
+      status: 0,
+      msg: "用户信息失效"
+    });
+  }
+
+}
+
+//判断是否已经登录
+let islogined = async (req, res) => {
+  if (req.session.username) {
+    res.send({
+      msg: "获取用户信息成功",
+      status: 1,
+    })
+  } else {
+    res.send({
+      msg: "获取用户信息失败",
+      status: 0
+    })
+  }
+}
+
 //用户注册
-let register = async (req, res, next) => {
+let register = async (req, res) => {
   let { username, password, email, verify } = req.body;
 
   if (email !== req.session.email || verify !== req.session.verify) {
@@ -90,22 +135,14 @@ let register = async (req, res, next) => {
 
 }
 
-let getUser = async (req, res) => {
-  console.log(req.query.name);
-
-  if (req.session.username) {
-    res.send({
-      msg: "获取用户信息成功",
-      status: 1,
-    })
-  } else {
-    res.send({
-      msg: "获取用户信息失败",
-      status: 0
-    })
-  }
+//退出登录
+let logout = async (req, res) => {
+  req.session.username = '';
+  res.send({
+    msg: "退出成功",
+    status: 1
+  })
 }
-
 
 //获取图形验证码
 let verifyImg = async (req, res) => {
@@ -157,8 +194,10 @@ let verifyEmail = async (req, res) => {
 
 module.exports = {
   login,
+  autologin,
+  islogined,
   register,
-  getUser,
+  logout,
   verifyImg,
   verifyEmail
 }

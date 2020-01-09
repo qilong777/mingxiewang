@@ -48,10 +48,18 @@ header a:hover {
   border-color: #666 #eee #eee;
 }
 
-.top-nav .nav .isLogin a {
+.top-nav .nav .no-login {
+  display: none;
+}
+
+.top-nav .nav .no-login a {
   float: left;
   color: #f60;
   margin-left: 26px;
+}
+
+.top-nav .nav .logined {
+  display: none;
 }
 
 .top-nav .nav .mine,

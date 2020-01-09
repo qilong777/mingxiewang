@@ -2,10 +2,27 @@
 <div class="top-nav">
   <div class="container clearfix">
     <ul class="nav">
-      <li class="isLogin">
-        <a href="#">欢迎登录名鞋库</a>
-        <a href="#">免费注册</a>
+      <li class="no-login">
+        <a href="./html/login.html">欢迎登录名鞋库</a>
+        <a href="./html/register.html">免费注册</a>
       </li>
+      <li class="logined">
+        <span id="uname_2904">欢迎您，<a href="/member-index.html" id="hd_nickname" style="color: #c00;">qilong1</a>！</span>
+        <a href="#" class="exit">[退出]</a>
+      </li>
+      <script>
+        $(".exit").click(function (e) {
+          e.preventDefault();
+          $.removeItem("userInfo");
+          $.get({
+            url: "http://localhost/users/logout",
+            success(res) {
+              location.reload();
+            }
+          })
+
+        })
+      </script>
       <li class="mine">
         <a href="#">我的名鞋库</a><i class="triangle"></i>
         <div class="mask"></div>

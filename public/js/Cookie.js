@@ -1,12 +1,13 @@
 $(function () {
   $.extend({
-    setItem(key, value, delay) {
+    setItem(key, value, delay, path) {
+      path = path || "/";
       if (delay) {
         let date = new Date();
         date.setDate(date.getDate() + delay);
-        document.cookie = key + "=" + value + ";expires=" + date;
+        document.cookie = `${key}=${value};expires=${date};path=${path}`;
       } else {
-        document.cookie = key + "=" + value;
+        document.cookie = `${key}=${value};path=${path}`;
       }
     },
     getItem(key) {
@@ -19,13 +20,13 @@ $(function () {
       }
     },
     removeItem(key) {
-      this.setCookie(key, "", -1);
+      this.setItem(key, "", -1);
     },
     clear() {
       let arr = document.cookie.split("; ");
       for (const iterator of arr) {
         let arrTemp = iterator.split("=");
-        this.removeCookie(arrTemp[0]);
+        this.removeItem(arrTemp[0]);
       }
     }
   })

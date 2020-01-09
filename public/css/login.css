@@ -1,9 +1,44 @@
+.header {
+  height: 90px;
+  padding-top: 10px;
+}
+
+.header .header-list1 {
+  float: left;
+  width: 266px;
+  height: 90px;
+}
+
+.header .header-list2 {
+  float: left;
+  padding: 0 20px;
+  height: 90px;
+  line-height: 90px;
+  font-size: 26px;
+}
+
+.header .header-list3 {
+  float: right;
+  width: 120px;
+  height: 90px;
+  line-height: 140px;
+  text-align: right;
+}
+
+.header .header-list3 a {
+  color: #006ee7;
+}
+
+.header .header-list3 a:hover {
+  text-decoration: underline;
+}
+
 .wrapper {
-  background-color: #4ec3ff;
   height: 600px;
 }
 
 .wrapper .container {
+  width: 1200px;
   height: 600px;
 }
 
@@ -144,7 +179,7 @@
   text-align: center;
   color: #fff;
   font-size: 20px;
-  background: #409ffb;
+  background: #c40000;
   margin-bottom: 10px;
 }
 

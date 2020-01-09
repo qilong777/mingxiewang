@@ -47,13 +47,20 @@ header {
       }
     }
 
-    .isLogin {
+    .no-login {
+      display: none;
+
       a {
         float: left;
         color: #f60;
         margin-left: 26px;
       }
     }
+
+    .logined {
+      display: none;
+    }
+
 
     .mine,
     .phone {

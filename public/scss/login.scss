@@ -1,8 +1,43 @@
+.header {
+  height: 90px;
+  padding-top: 10px;
+
+  .header-list1 {
+    float: left;
+    width: 266px;
+    height: 90px;
+  }
+
+  .header-list2 {
+    float: left;
+    padding: 0 20px;
+    height: 90px;
+    line-height: 90px;
+    font-size: 26px;
+  }
+
+  .header-list3 {
+    float: right;
+    width: 120px;
+    height: 90px;
+    line-height: 140px;
+    text-align: right;
+
+    a {
+      color: #006ee7;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 .wrapper {
-  background-color: #4ec3ff;
   height: 600px;
 
   .container {
+    width: 1200px;
     height: 600px;
 
     .container-left {
@@ -142,7 +177,7 @@
           text-align: center;
           color: #fff;
           font-size: 20px;
-          background: #409ffb;
+          background: #c40000;
           margin-bottom: 10px;
         }
 

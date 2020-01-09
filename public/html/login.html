@@ -13,10 +13,20 @@
 </head>
 
 <body>
+  <header class="header container clearfix">
+    <div class="header-list1">
+      <h2 class="header-logo"><a href="http://www.360kad.com">
+          <img alt="欢迎来到名鞋库网上鞋城!" src="//images.s.cn/images/css/newlogo.png">
+        </a>
+      </h2>
+      <p class="header-notice"><img src="https://res.360kad.com/theme/default/img/user/2015/autoSlogo.gif"></p>
+    </div>
+  </header>
+  <div style="background-color: red; height: 2px;"></div>
   <div class="wrapper">
     <div class="container">
       <div class="container-left">
-        <img src="http://image.360kad.com/group1/M00/2D/B7/CgAgEVctrCiAC1slAAHd-utbGgk880.jpg">
+        <img width="591" height="599" src="//images.s.cn/images/2012/1024/2016dl.jpg">
       </div>
       <div class="container-right">
         <div class="login-box">
@@ -35,24 +45,24 @@
             <i class="prompt-icon"></i>
             <span class="error-text">密码长度应在6-20位之间！</span>
           </p>
-          <!-- <div class="verify clearfix">
+          <div class="verify clearfix">
             <div class="input-box">
               <i class="lock-icon"></i>
-              <input type="text" placeholder="请输入验证码">
+              <input type="text" placeholder="请输入验证码" class="verify-input">
             </div>
-            <img src="http://localhost/users/verifyImg" alt="">
+            <img class="verify-img" src="http://localhost/users/verifyImg" alt="">
           </div>
           <p class="error clearfix">
             <i class="prompt-icon"></i>
             <span class="error-text">验证码错误</span>
-          </p> -->
+          </p>
           <div class="check-box">
             <input type="checkbox" id="login-checkbox">
             <label for="login-checkbox">2周内免登录</label>
           </div>
           <a href="#" class="btn">登&nbsp;&nbsp;&nbsp;&nbsp;录</a>
           <p class="forget clearfix">
-            <a href="./html/register.html" class="reg fl">免费注册></a>
+            <a href="./register.html" class="reg fl">免费注册></a>
             <a href="#" class="fp fr">忘记密码？</a>
           </p>
         </div>
@@ -62,28 +72,27 @@
   <script>
     $(function () {
 
+      //自动登录
       let userInfo = $.getItem("userInfo") || "{}";
       let cookie = JSON.parse(userInfo);
       if (cookie.username && cookie.password) {
         $.post({
-          url: "http://localhost/users/login",
-          data: {
-            username: cookie.username,
-            password: cookie.password
-          },
+          url: "http://localhost/users/autologin",
           success(res) {
             if (res.status == 1) {
               location.href = "http://localhost";
             } else {
-              alert("用户信息更改,请重新登录");
+              alert(res.msg);
             }
           }
         })
       }
 
+
       let msgs = $(".error"),
         username = $(".username"),
-        password = $(".password");
+        password = $(".password"),
+        verify = $(".verify-input");
 
       //检查用户框是否合法
       function checkUsername() {
@@ -108,24 +117,42 @@
         }
       }
 
+      //检查验证码框是否合法
+      function checkVerify() {
+        let len = verify.val().trim().length;
+        if (len == 0) {
+          msgs.eq(2).addClass("show").children(".error-text").text("验证码不能为空");
+          return false;
+        } else {
+          msgs.eq(2).removeClass("show");
+          return true;
+        }
+      }
+
+
       //点击登录事件
       $(".btn").click(function (e) {
-        let uvalue = username.val().trim(),
-          pvalue = password.val().trim();
         e.preventDefault();
-        if (!checkUsername() || !checkPassword()) {
+        if (!checkUsername() || !checkPassword() || !checkVerify()) {
           return;
         }
-
+        let uvalue = username.val().trim(),
+          pvalue = password.val().trim(),
+          vvalue = verify.val().trim();
         $.post({
           url: "http://localhost/users/login",
           data: {
             username: uvalue,
-            password: pvalue
+            password: pvalue,
+            verify: vvalue
           },
           success(res) {
             if (res.status == 1) {
               if ($("#login-checkbox").prop("checked")) {
+                console.log(JSON.stringify({
+                  username: uvalue,
+                  password: pvalue
+                }));
                 $.setItem("userInfo", JSON.stringify({
                   username: uvalue,
                   password: pvalue
@@ -134,19 +161,29 @@
               location.href = "http://localhost/";
             } else if (res.status == 0) {
               msgs.eq(1).addClass("show").children(".error-text").text(res.msg);
-            } else {
+            } else if (res.status == -1) {
               msgs.eq(0).addClass("show").children(".error-text").text(res.msg);
+            } else {
+              msgs.eq(2).addClass("show").children(".error-text").text(res.msg);
             }
           }
         })
       })
 
 
+      //点击图形验证码切换图片
+      $(".verify-img").click(function () {
+        $(this).attr("src", "http://localhost/users/verifyImg");
+      })
+
       //用户输入框的失去焦点事件
       username.blur(checkUsername);
 
       //密码输入框的失去焦点事件
       password.blur(checkPassword);
+
+      //验证码框失去焦点
+      verify.blur(checkVerify);
     })
   </script>
 
