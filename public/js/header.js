@@ -88,7 +88,7 @@ class Tab1 {
               {{if $value.includes("http")}}
                 <a href="#"><img src={{$value}}></a>
               {{else}}
-                <a href="#">{{$value}}</a>
+                <a href="http://localhost/html/list.html?classId=1">{{$value}}</a>
               {{/if}}
             {{/each}}
             </p>

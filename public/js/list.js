@@ -74,6 +74,7 @@ class ProductList {
     this.data = null;
   }
   init() {
+    $(".bar i").text(this.count);
     this.getList(this.classId, this.page, this.mode, this.what)
       .then(() => {
         this.renderUI();
@@ -92,15 +93,15 @@ class ProductList {
           <a href="#" class="sell">销量</a>
         </p>
         <p class="fr counts">
-          共找到<span>50</span>个商品
+          共找到<span>${this.count}</span>个商品
         </p>
       </div>
       <ul class="list container clearfix">
         {{each $data}}
         <li class="list-item">
           <div class="wrap">
-            <a href="#">
-              <img src={{$value.bigSrc}} alt="">
+            <a href="http://localhost/html/detail.html?id={{$value.id}}">
+              <img width="210" height="210" src="../images/loading.gif" data-src={{$value.bigSrc}} alt="">
             </a>
             <div class="scroll">
               <span class="prev">&lt;</span>
@@ -111,6 +112,7 @@ class ProductList {
             </div>
 
           </div>
+          <a href="#">
           <div class="desc">
             <p class="price">
               <span>￥{{$value.price}}</span>
@@ -120,6 +122,7 @@ class ProductList {
             <p>已售出<i>{{$value.sold}}</i>件</p>
             <p class="size">尺码：{{$value.size}}</p>
           </div>
+          </a>
         </li>
         {{/each}}
       </ul>
@@ -130,6 +133,8 @@ class ProductList {
       </div>
     `;
     this.root.html(template.render(html, this.data));
+    $(".navigation span").text(this.data[0].className);
+    $(".selected h6").text("类别：" + this.data[0].className);
     this.pageBtns = this.root.find(".page-btns");
     this.sortBtns = this.root.find(".sort-box");
     this.lists = this.root.find(".list");
@@ -147,6 +152,7 @@ class ProductList {
       }
       html += "<li>下一页</li>";
       this.pageBtns.html(html);
+      lazyLoading();
     }
   }
 
@@ -155,8 +161,8 @@ class ProductList {
     {{each $data}}
     <li class="list-item">
       <div class="wrap">
-        <a href="#">
-          <img src={{$value.bigSrc}} alt="">
+        <a href="http://localhost/html/detail.html?id={{$value.id}}">
+          <img width="210" height="210" src="../images/loading.gif" data-src={{$value.bigSrc}} alt="">
         </a>
         <div class="scroll">
           <span class="prev">&lt;</span>
@@ -167,6 +173,7 @@ class ProductList {
         </div>
 
       </div>
+      <a href="http://localhost/html/detail.html?id={{$value.id}}">
       <div class="desc">
         <p class="price">
           <span>￥{{$value.price}}</span>
@@ -176,10 +183,13 @@ class ProductList {
         <p>已售出<i>{{$value.sold}}</i>件</p>
         <p class="size">尺码：{{$value.size}}</p>
       </div>
+      </a>
     </li>
     {{/each}}
     `;
+
     this.lists.html(template.render(html, this.data));
+    lazyLoading();
   }
 
   getList(classId, page, mode, what) {
@@ -192,8 +202,6 @@ class ProductList {
         success(res) {
           if (res.status === 1) {
             self.data = res.data;
-            console.log(self.data);
-
             resolve();
           } else {
             alert("数据加载失败");
@@ -271,8 +279,7 @@ class ProductList {
         .then(() => {
           self.renderList();
         })
+      window.scrollTo(0, 500);
     })
   }
-
-
 }

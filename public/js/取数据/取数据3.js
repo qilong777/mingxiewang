@@ -1,3 +1,4 @@
+//获取首页楼层数据
 var floors = document.querySelectorAll(".product_list")
 
 var arr = [];

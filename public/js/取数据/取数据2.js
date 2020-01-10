@@ -1,3 +1,4 @@
+//选项卡数据2
 var div = document.querySelectorAll(".wnav_pop");
 var arr = [];
 for (let i = 0; i < 3; i++) {

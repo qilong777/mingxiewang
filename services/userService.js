@@ -67,6 +67,7 @@ let islogined = async (req, res) => {
     res.send({
       msg: "获取用户信息成功",
       status: 1,
+      data: req.session.username
     })
   } else {
     res.send({

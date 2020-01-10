@@ -15,8 +15,10 @@ $(function () {
     $.get({
       url: "http://localhost/users/islogined",
       success(res) {
-        if (res.status == 1)
+        if (res.status == 1) {
           $(".logined").css("display", "block");
+          $("#uname a").text(res.data);
+        }
         else {
           $(".no-login").css("display", "block");
         }

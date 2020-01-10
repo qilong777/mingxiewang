@@ -16,7 +16,7 @@ class Floor {
       {{each $value.data}}
         <li>
           <a href="#" target="_blank" title={{$value.desc}}>
-            <img src={{$value.src}} title={{$value.desc}}>
+            <img src="http://localhost/images/loading.gif" data-src={{$value.src}} title={{$value.desc}}>
             <div>
               <p class="p1">{{$value.desc}}</p>
               <p class="p2">
@@ -33,6 +33,7 @@ class Floor {
     {{/each}}
     `;
     this.root.html(template.render(html, this.data));
+    lazyLoading();
   }
 }
 export { Floor }

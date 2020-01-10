@@ -1,0 +1,376 @@
+.navigation {
+  padding: 10px 0;
+}
+
+.detail-left {
+  position: relative;
+}
+
+.detail-img {
+  position: relative;
+  border: 1px solid #f0f0f0;
+  margin: 0 15px 7px 0;
+  width: 430px;
+  height: 430px;
+  background: url('//images.s.cn/images/scn2012/skin/loading1.gif') no-repeat center;
+
+  .float {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 215px;
+    height: 215px;
+    background-color: #aaa;
+    opacity: 0.5;
+  }
+
+  .mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff0;
+  }
+
+}
+
+.detail-bigimg {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 430px;
+  width: 430px;
+  height: 430px;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 860px;
+    height: 860px;
+    z-index: 999;
+  }
+}
+
+.img-select {
+  width: 435px;
+
+  a {
+    position: relative;
+    float: left;
+    margin-right: 5px;
+    border: 2px solid #fff;
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: -8px;
+      left: 19px;
+      content: "";
+      height: 6px;
+      width: 11px;
+      background: transparent url('//images.s.cn/statics/upyellowarrow.gif') no-repeat 50% 100%;
+      visibility: hidden;
+    }
+
+    &.active {
+      border-color: #f60;
+
+      &::before {
+        visibility: visible;
+      }
+    }
+
+    &:hover img {
+      border-color: #f60;
+    }
+
+    img {
+      width: 45px;
+      height: 35px;
+      border: 1px solid #e9e9e9;
+      border-bottom-color: #ccc;
+      border-right-color: #ccc;
+    }
+  }
+}
+
+.detail-right {
+  width: 542px;
+
+  .name {
+    line-height: 1.8em;
+    margin-bottom: -4px;
+
+    .more-brand {
+      font-size: 12px;
+      font-weight: normal;
+      float: right;
+      display: block;
+      color: #999;
+
+      a {
+        color: #f60;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .goods-name {
+      font-size: 14px;
+      width: 435px;
+      font-weight: bold;
+    }
+
+    .sp {
+      margin: 5px 0;
+      height: 1px;
+      overflow: hidden;
+      clear: both;
+      background: url('//images.s.cn/themes/scn2012/images/skin/pro_detial_icon1.png') repeat-x;
+    }
+  }
+
+  //商品价格等
+  .goods-price {
+    margin: 8px 5px 10px;
+
+    p {
+      color: #666;
+      line-height: 25px;
+
+      .price {
+        color: #d00;
+        font-size: 18px;
+        font-weight: 700;
+        font-family: verdana;
+      }
+
+      .comment,
+      .comCountBar {
+
+        display: inline-block;
+        width: 60px;
+        height: 11px;
+        line-height: 11px;
+        overflow: hidden;
+        background: url('//images.s.cn/themes/scn2012/images/skin/pro_detial_icon1.png') no-repeat -99px -190px;
+      }
+
+      .comment {
+        background-position: -99px -178px;
+      }
+
+      .comCount {
+        color: #2d499d;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  //促销信息
+  .push-sale {
+    padding: 10px 0 10px;
+    font-family: '宋体';
+    clear: both;
+    color: #999;
+    background: url('//images.s.cn/themes/scn2012/images/skin/pro_detial_icon1.png') repeat-x 0 -65px;
+    height: 20px;
+    line-height: 20px;
+
+    .wrap {
+      background: #ffe9e9;
+    }
+
+    .t {
+      height: 20px;
+      padding: 0 5px;
+      text-align: center;
+      border-right: 2px solid #fff;
+      float: left;
+      color: #fff;
+      background: #ff9090;
+    }
+
+    .scon {
+      padding: 0 5px;
+      height: 20px;
+      color: #fe6464;
+      float: left;
+      white-space: nowrap;
+    }
+  }
+
+  //配置选择
+  .select-box {
+    background: #f5f5f5;
+    padding: 7px 2px;
+
+    p {
+      span {
+        float: left;
+        width: 75px;
+        padding: 3px 0;
+        text-align: right;
+        line-height: 30px;
+      }
+
+      a {
+        position: relative;
+        float: left;
+        margin: 6px 3px;
+        padding: 3px 5px;
+        border: 1px #ccc solid;
+        line-height: 15px;
+
+        &.img {
+          padding: 0;
+          width: 29px;
+          height: 29px;
+        }
+
+        .gou {
+          display: none;
+          background: url('//images.s.cn/statics/item_sel.gif') no-repeat 0 0;
+          height: 12px;
+          overflow: hidden;
+          width: 12px;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+
+        img {
+          width: 28px;
+          height: 28px;
+        }
+
+        &.selected {
+          border-width: 2px;
+          border-color: #f90;
+
+          .gou {
+            display: block;
+          }
+        }
+
+      }
+
+      input {
+        float: left;
+        margin: 6px 0px;
+        width: 30px;
+        height: 20px;
+        text-align: center;
+        border: 1px #ccc solid;
+        border-left: 0;
+        border-right: 0;
+      }
+
+      &.btns {
+        a {
+          width: 20px;
+          height: 20px;
+          margin: 6px 0px;
+          line-height: 20px;
+          text-align: center;
+          font-size: 16px;
+          font-weight: 600;
+          padding: 0;
+        }
+
+        button {
+          float: right;
+          margin-right: 5px;
+          margin-top: 10px;
+          width: 95px;
+          height: 25px;
+          background: url('//images.s.cn/themes/scn2012/images/skin/pro_detial_icon1.png') no-repeat 0 -207px;
+          cursor: pointer;
+
+          &:hover {
+            background-position: 0 -178px;
+          }
+        }
+      }
+    }
+  }
+
+  .sp {
+    margin: 5px 0;
+    height: 1px;
+    overflow: hidden;
+    clear: both;
+    background: url('//images.s.cn/themes/scn2012/images/skin/pro_detial_icon1.png') repeat-x;
+  }
+
+  .buy-btns {
+    position: relative;
+    height: 58px;
+
+    p {
+      position: absolute;
+      width: 200px;
+      bottom: 10px;
+      left: 0;
+      color: #666;
+
+      .buy-num,
+      .buy-Cm {
+        padding: 0 3px;
+        color: #C00;
+        font-weight: 700;
+        font-family: '宋体';
+      }
+    }
+
+    .btn-box {
+      position: absolute;
+      width: 315px;
+      height: 46px;
+      right: 5px;
+      bottom: 5px;
+
+      .im-buy {
+        float: left;
+        width: 137px;
+        height: 44px;
+        background: url('//images.s.cn/themes/scn2012/images/skin/pro_detial_icon1.png') no-repeat -1px -447px;
+
+        &:hover {
+          background-position: -1px -498px;
+        }
+      }
+
+      .add-cart {
+        width: 171px;
+        height: 44px;
+        background: url('//images.s.cn/themes/scn2012/images/skin/pro_detial_icon1.png') no-repeat -1px -124px;
+        float: right;
+
+        &:hover {
+          background-position: -1px -394px;
+        }
+      }
+    }
+  }
+
+  .promise {
+    background: url('//images.s.cn/themes/scn2012/images/skin/pro_detial_icon1.png') repeat-x 0 -65px;
+    padding: 10px 0;
+    font-family: '宋体';
+    color: #777;
+
+    i {
+      color: #999;
+    }
+  }
+}

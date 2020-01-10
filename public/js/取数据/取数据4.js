@@ -1,3 +1,4 @@
+//获取商品列表的数据
 var list = document.querySelectorAll(".product_list dl");
 
 var arr = [];
