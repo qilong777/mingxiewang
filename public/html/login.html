@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../css/base_px.css">
   <link rel="stylesheet" href="../css/login.css">
   <script src="../js/jquery-3.4.0.js"></script>
+  <script src="../js/jQuery.md5.js"></script>
   <script src="../js/Cookie.js"></script>
 </head>
 
@@ -83,6 +84,7 @@
               location.href = "http://localhost";
             } else {
               alert(res.msg);
+              $.removeItem("userInfo");
             }
           }
         })
@@ -137,7 +139,7 @@
           return;
         }
         let uvalue = username.val().trim(),
-          pvalue = password.val().trim(),
+          pvalue = $.md5(password.val().trim()),
           vvalue = verify.val().trim();
         $.post({
           url: "http://localhost/users/login",

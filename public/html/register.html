@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../css/base_px.css">
   <link rel="stylesheet" href="../css/register.css">
   <script src="../js/jquery-3.4.0.js"></script>
+  <script src="../js/jQuery.md5.js"></script>
   <title>注册</title>
 </head>
 
@@ -227,7 +228,7 @@
           url: "http://localhost/users/register",
           data: {
             username: username.val(),
-            password: password.val(),
+            password: $.md5(password.val()),
             email: email.val(),
             verify: verify.val()
           },
