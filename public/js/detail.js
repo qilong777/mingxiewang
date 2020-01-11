@@ -1,4 +1,4 @@
-import { Tab, Tab1 } from './header.js';
+import { Init } from './init.js';
 //放大镜代码
 (function ($) {
   $.fn.extend({
@@ -44,35 +44,8 @@ import { Tab, Tab1 } from './header.js';
 })(jQuery)
 
 $(function () {
-  //动态载入头部
-  $("header").load("../components/header.html", function () {
-    let el = $(this).find(".nav-list");
-    let el1 = $(this).find(".nav-list2");
-    $.getJSON("../data/data1.json", function (data) {
-      new Tab(data, el).init();
-    });
-    $.getJSON("../data/data2.json", function (data) {
-      new Tab1(data, el1).init();
-    });
-    $.get({
-      url: "http://localhost/users/islogined",
-      success(res) {
-        if (res.status == 1)
-          $(".logined").css("display", "block");
-        else {
-          $(".no-login").css("display", "block");
-        }
-      }
-    })
-  });
-
-  //底部
-  $("footer").load("../components/footer.html");
-
-  //侧边栏
-  $(".sider").load("../components/sider.html");
-
-
+  //初始化
+  Init();
   $.get({
     url: "http://localhost/commodities/detail",
     data: { id: location.search.slice(4) },
@@ -183,7 +156,6 @@ class Detail {
     this.buyNumText = this.root.find(".buy-num");
     this.buyCm = this.root.find(".buy-cm");
     this.buyNumInput = this.root.find(".num");
-
     //zb
     let num = 1;
     Object.defineProperty(this, "buyNum", {
@@ -237,7 +209,25 @@ class Detail {
       if ($(this).hasClass("im-buy")) {
         alert("暂无此功能，敬请等待，反正我不做!");
       } else {
-        // $.post()
+        $.post({
+          url: "http://localhost/commodities/shopCart",
+          data: {
+            commodityId: self.data.id,
+            count: self.buyNum,
+            selectSize: self.buyCm.text()
+          },
+          success(res) {
+            if (res.status == 1) {
+              $(".cart-num").text($(".cart-num").text() * 1 + self.buyNum)
+              alert(res.msg);
+            } else {
+              alert(res.msg);
+              $.setItem("originDetail", self.data.id);
+              location.href = "http://localhost/html/login.html";
+            }
+
+          }
+        })
       }
     })
   }

@@ -44,7 +44,7 @@ let getPageCount = async (req, res) => {
 //获取商品详情
 let getDetail = async (req, res) => {
   let { id } = req.query;
-  let sql = `select classId,name,bigSrc,smallSrc,del,price,score,commentCount,size,color,brand from commodity where id=?`;
+  let sql = `select id,classId,name,bigSrc,smallSrc,del,price,score,commentCount,size,color,brand from commodity where id=?`;
   let data = [id];
   let result = await db.base(sql, data);
   if (result.length == 1 && result[0].name != null) {
@@ -66,8 +66,8 @@ let getDetail = async (req, res) => {
 
 //获取用户购物车
 let getShopCar = async (req, res) => {
-  // let username = req.session.username;
-  let username = "qilong3";
+  let username = req.session.username;
+  // let username = "qilong3";
   if (username == undefined) {
     res.send({
       status: 0,
@@ -75,7 +75,7 @@ let getShopCar = async (req, res) => {
     })
     return;
   }
-  let sql = `select name,bigSrc,price,count,selectSize,color 
+  let sql = `select isSelect,name,bigSrc,price,count,selectSize,color 
   from shopCart,commodity
   where username=? and shopCart.commodityId = commodity.id;`;
   let data = [username];
@@ -87,11 +87,12 @@ let getShopCar = async (req, res) => {
   })
 }
 
-//获取添加购物车
+//添加购物车
 let addShopCar = async (req, res) => {
-  // let username = req.session.username;
-  let username = "qilong3";
-  if (username == undefined) {
+  let username = req.session.username;
+  // let username = "qilong3";
+
+  if (!username) {
     res.send({
       status: 0,
       msg: "用户尚未登录"
@@ -110,7 +111,7 @@ let addShopCar = async (req, res) => {
     sql = `update shopCart set count=${count + result[0].count} where username=? and commodityId=? and selectSize=?;`
   } else {
     sql = `insert into shopCart set?`;
-    data = { username, commodityId, count, selectSize };
+    data = { username, commodityId, count, selectSize, isSelect: 1 };
   }
   result = await db.base(sql, data);
   if (result.affectedRows == 1) {

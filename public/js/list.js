@@ -1,32 +1,8 @@
-import { Tab, Tab1 } from './header.js';
+import { Init } from './init.js';
 $(function () {
-  //动态载入头部
-  $("header").load("../components/header.html", function () {
-    let el = $(this).find(".nav-list");
-    let el1 = $(this).find(".nav-list2");
-    $.getJSON("../data/data1.json", function (data) {
-      new Tab(data, el).init();
-    });
-    $.getJSON("../data/data2.json", function (data) {
-      new Tab1(data, el1).init();
-    });
-    $.get({
-      url: "http://localhost/users/islogined",
-      success(res) {
-        if (res.status == 1)
-          $(".logined").css("display", "block");
-        else {
-          $(".no-login").css("display", "block");
-        }
-      }
-    })
-  });
+  //初始化
+  Init();
 
-  //底部
-  $("footer").load("../components/footer.html");
-
-  //侧边栏
-  $(".sider").load("../components/sider.html");
 
   //展开收起功能
   let overdl = $(".select_dl:gt(1)");

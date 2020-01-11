@@ -149,16 +149,19 @@
           success(res) {
             if (res.status == 1) {
               if ($("#login-checkbox").prop("checked")) {
-                console.log(JSON.stringify({
-                  username: uvalue,
-                  password: pvalue
-                }));
                 $.setItem("userInfo", JSON.stringify({
                   username: uvalue,
                   password: pvalue
                 }, 14));
               }
-              location.href = "http://localhost/";
+              let originDetail = $.getItem("originDetail");
+              if (originDetail) {
+                $.removeItem("originDetail");
+                location.href = "http://localhost/html/detail.html?id=" + originDetail;
+              } else {
+                location.href = "http://localhost/";
+              }
+
             } else if (res.status == 0) {
               msgs.eq(1).addClass("show").children(".error-text").text(res.msg);
             } else if (res.status == -1) {
