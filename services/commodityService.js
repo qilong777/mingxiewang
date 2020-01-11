@@ -75,7 +75,7 @@ let getShopCar = async (req, res) => {
     })
     return;
   }
-  let sql = `select isSelect,name,bigSrc,price,count,selectSize,color 
+  let sql = `select commodityId,isSelect,name,bigSrc,price,count,selectSize,color 
   from shopCart,commodity
   where username=? and shopCart.commodityId = commodity.id;`;
   let data = [username];
@@ -127,10 +127,140 @@ let addShopCar = async (req, res) => {
   }
 }
 
+
+//修改购物车
+let updateShopCar = async (req, res) => {
+  let username = req.session.username;
+  // let username = "qilong3";
+
+  if (!username) {
+    res.send({
+      status: 0,
+      msg: "用户尚未登录"
+    })
+    return;
+  }
+
+  let { commodityId, count, selectSize, isSelect } = req.body;
+  commodityId *= 1;
+  count *= 1;
+  if (count < 1) {
+    res.send({
+      msg: "更新购物车失败",
+      status: -1
+    })
+    return;
+  }
+
+  let sql = `update shopCart set? where username=? and commodityId=? and selectSize=?;`
+  let data = [{ count, isSelect }, username, commodityId, selectSize];
+  result = await db.base(sql, data);
+  if (result.affectedRows == 1) {
+    res.send({
+      status: 1,
+      msg: "更新购物车成功"
+    })
+  } else {
+    res.send({
+      msg: "更新购物车失败",
+      status: -1
+    })
+  }
+}
+
+//删除购物车
+let deleteShopCar = async (req, res) => {
+  let username = req.session.username;
+  // let username = "qilong3";
+
+  if (!username) {
+    res.send({
+      status: 0,
+      msg: "用户尚未登录"
+    })
+    return;
+  }
+
+  let { commodityId, selectSize } = req.body;
+
+  commodityId *= 1;
+  let sql = `DELETE FROM shopcart where username=? and commodityId=? and selectSize=?;`
+  let data = [username, commodityId, selectSize];
+  result = await db.base(sql, data);
+  if (result.affectedRows == 1) {
+    res.send({
+      status: 1,
+      msg: "删除购物车成功"
+    })
+  } else {
+    res.send({
+      msg: "删除购物车失败",
+      status: -1
+    })
+  }
+}
+
+//结算购物车，其实就是删除大部分购物车数据
+let settleMent = async (req, res) => {
+  let username = req.session.username;
+  // let username = "qilong3";
+  if (!username) {
+    res.send({
+      status: 0,
+      msg: "用户尚未登录"
+    })
+    return;
+  }
+
+
+  let sql = `DELETE FROM shopcart where username=? and isSelect=1;`
+  let data = [username];
+  result = await db.base(sql, data);
+  if (result.affectedRows >= 1) {
+    res.send({
+      status: 1,
+      msg: "结算成功"
+    })
+  } else {
+    res.send({
+      status: -1,
+      msg: "结算失败"
+    })
+  }
+
+}
+
+//搜索商品
+let search = async (req, res) => {
+  let { wd } = req.query;
+
+  let sql = `select * from commodityclass where name LIKE ?;`
+  let data = ["%" + wd + "%"];
+  let result = await db.base(sql, data);
+  if (result.length > 0) {
+    res.send({
+      status: 1,
+      data: result
+    })
+  } else {
+    res.send({
+      status: 0,
+      msg: "没有这类相似的商品，数据库很小，我的锅！"
+    })
+  }
+
+}
+
+
+
 module.exports = {
   getLists,
   getPageCount,
   getDetail,
   getShopCar,
-  addShopCar
+  addShopCar,
+  updateShopCar,
+  deleteShopCar,
+  settleMent,
+  search
 }

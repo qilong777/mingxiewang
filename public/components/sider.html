@@ -5,9 +5,11 @@
   <p class="txt">品牌分类</p>
 </div>
 <div class="cart sider-logo">
-  <div class="cart-border"></div>
-  <div class="cart-txt">购物车<div class="jian">◆</div>
-  </div>
+  <a href="http://localhost/html/shopCart.html" style="display: block;">
+    <div class="cart-border"></div>
+    <div class="cart-txt">购物车<div class="jian">◆</div>
+    </div>
+  </a>
 </div>
 <div class="cart order sider-logo">
   <div class="cart-txt">我的订单<div class="jian">◆</div>
@@ -30,11 +32,11 @@
     let toTopBtn = $(".to-top");
     let timer = null;
     $(".cart").hover(function () {
-      $(this).children(".cart-txt").stop().animate({
+      $(this).find(".cart-txt").stop().animate({
         right: "37px"
       }, 300)
     }, function () {
-      $(this).children(".cart-txt").stop().animate({
+      $(this).find(".cart-txt").stop().animate({
         right: "47px"
       }, 300)
     })
@@ -47,7 +49,7 @@
     })
     toTopBtn.click(function () {
       let y = scrollY;
-      let speed = scrollY / 150;
+      let speed = scrollY / 100;
       speed = speed < 10 ? 10 : speed;
       timer = setInterval(function () {
         if (scrollY != 0) {

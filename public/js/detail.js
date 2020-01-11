@@ -175,13 +175,15 @@ class Detail {
   addEventHandle() {
     let self = this;
     //选择尺码的点击事件
-    this.size.on("click", "a", function () {
+    this.size.on("click", "a", function (e) {
+      e.preventDefault();
       $(this).addClass("selected").siblings("a").removeClass("selected");
       self.buyCm.text($(this).text());
     });
 
     //+-点击事件
-    this.btns.on("click", "a", function () {
+    this.btns.on("click", "a", function (e) {
+      e.preventDefault();
       if ($(this).text() == "-" && self.buyNum > 1) {
         self.buyNum--;
       } else if ($(this).text() == "+" && self.buyNum < 20) {
@@ -205,7 +207,8 @@ class Detail {
     }
 
     //加入购物车事件
-    this.cartBtns.on("click", "a", function () {
+    this.cartBtns.on("click", "a", function (e) {
+      e.preventDefault();
       if ($(this).hasClass("im-buy")) {
         alert("暂无此功能，敬请等待，反正我不做!");
       } else {

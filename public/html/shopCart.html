@@ -21,34 +21,67 @@
 <body>
   <header></header>
   <div class="sider"></div>
-  <main class="main container">
-    <div class="navigation">
-      你当前的位置:<span>休闲鞋</span>
+  <main class="main">
+    <div class="img-wrap">
+      <img alt="购物流程--查看购物车" src="//images.s.cn/statics/cartnav-step01.jpg">
     </div>
-    <div class="detail-box clearfix">
-      <div class="fl detail-left">
-        <div class="detail-img">
-          <img width="430" height="430" src="https://images.s.cn/images/goods/20160510/c0296215909e8498.jpg" alt="">
-          <div class="float"></div>
-          <div class="mask"></div>
-        </div>
-        <div class="detail-bigimg">
-          <img src="https://images.s.cn/images/goods/20160510/c0296215909e8498.jpg" alt="">
-        </div>
-        <div class="img-select">
-          <a href="#" class="active">
-            <img src="//images.s.cn/images/goods/20160519/48f97c8e2cf755fe.jpg" alt="">
-          </a>
-        </div>
+    <div class="wrap">
+      <p>我的购物车</p>
+      <div class="cart-header">
+        <div><input class="allSelect" type="checkbox"></div>
+        <span class="first">商品信息</span>
+        <span>赠送积分</span>
+        <span>销售价格</span>
+        <span>数量</span>
+        <span>折扣/优惠</span>
+        <span>小计</span>
+        <span>操作</span>
       </div>
-      <div class="detail-right fr">
-      </div>
+      <ul class="cart-body">
+        <li>
+          <div class="checkbox"><input type="checkbox"></div>
+          <div class="first">
+            <a href="#" class="img">
+              <img width="50" height="50" src="//images.s.cn/images/goods/20160519/48f97c8e2cf755fe.jpg" alt="">
+              <img class="big-img" src="//images.s.cn/images/goods/20160519/48f97c8e2cf755fe.jpg" alt="">
+            </a>
+            <a href="#" class="desc">
+              <span class="name">
+                LINING李宁新款男鞋高达野外跑鞋运动鞋ARDL003
+              </span>
+              <span class="info">
+                (尺码:39,颜色:新基础黑+白 )
+              </span>
+            </a>
+          </div>
+          <div>0</div>
+          <div>￥<span>239.00</span></div>
+          <div class="btns clearfix">
+            <a href="#" class="fl">-</a>
+            <input type="text" class="fl">
+            <a href="#" class="fl">+</a>
+          </div>
+          <div>-</div>
+          <div>￥<span>239.00</span></div>
+          <div><a href="#">删除</a></div>
+        </li>
+      </ul>
+      <div class="cart-footer clearfix">
+        <p>已选商品数量：<span class="num">1</span></p>
+        <p>商品总金额：<span class="total">￥1000</span></p>
 
+        <a href="#">下单结算</a>
+      </div>
     </div>
+    <p class="msg">
+      用户尚未登录
+    </p>
+
+
 
   </main>
   <footer></footer>
-  <script src="../js/detail.js" type="module"></script>
+  <script src="../js/shopCart.js" type="module"></script>
 </body>
 
 </html>

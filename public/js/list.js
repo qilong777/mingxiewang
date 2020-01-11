@@ -91,8 +91,8 @@ class ProductList {
           <a href="#">
           <div class="desc">
             <p class="price">
-              <span>￥{{$value.price}}</span>
-              <del>￥{{$value.del}}</del>
+              <span>￥{{($value.price+0.00).toFixed(2)}}</span>
+              <del>￥{{($value.del+0.00).toFixed(2)}}</del>
             </p>
             <p>{{$value.description}}</p>
             <p>已售出<i>{{$value.sold}}</i>件</p>

@@ -17,4 +17,16 @@ router.get("/shopCart", service.getShopCar)
 //添加购物车
 router.post("/shopCart", service.addShopCar)
 
+//更新购物车
+router.put("/shopCart", service.updateShopCar)
+
+//删除购物车
+router.delete("/shopCart", service.deleteShopCar)
+
+//结算购物车
+router.delete("/settlement", service.settleMent)
+
+//搜索商品
+router.get("/search", service.search)
+
 module.exports = router;

@@ -62,8 +62,80 @@
     <div class="search">
       <div class="search-box">
         <input type="text" placeholder="篮球鞋">
+        <ul class="data-list">
+          <li>跑步鞋</li>
+          <li>跑步鞋</li>
+        </ul>
       </div>
-      <input class="search-btn" type="submit" value="搜索">
+      <a href="#" class="search-btn">搜索</a>
+      <script>
+        $(function () {
+          let wd = "";
+          let data = [];
+          let id = null;
+          let list = $(".data-list");
+          let searchBtn = $(".search-btn");
+          let searchInput = $(".search-box input");
+          searchInput.keyup(function (e) {
+            wd = $(this).val().trim();
+            if (wd != "") {
+              $.get({
+                url: "http://localhost/commodities/search",
+                data: { wd },
+                success(res) {
+                  if (res.status == 1) {
+                    getList(res.data);
+                  }
+                }
+              })
+            } else {
+              list.hide();
+            }
+          })
+
+          function getList(data) {
+            if (data.length == 0) {
+              list.hide();
+              return;
+            } else {
+              list.show();
+            }
+            let html = data.map(ele => {
+              return `<li>${ele.name}</li>`;
+            }).join("");
+            list.html(html);
+          }
+
+          //点击li
+          list.on("click", "li", function () {
+            searchInput.val($(this).text());
+            list.hide();
+          })
+          //点击搜索
+          searchBtn.click(function (e) {
+            let wd = searchInput.val().trim();
+            if (wd == "") {
+              alert("请输入关键字");
+              return;
+            }
+            e.preventDefault();
+            $.get({
+              url: "http://localhost/commodities/search",
+              data: { wd },
+              success(res) {
+                if (res.status == 1) {
+                  location.href = "http://localhost/html/list.html?classId=" + res.data[0].id
+                } else {
+                  alert(res.msg);
+                  return;
+                }
+
+              }
+            })
+          })
+        })
+
+      </script>
       <div class="hot">
         热搜：
         <a href="http://localhost/html/list.html?classId=2">
@@ -84,7 +156,7 @@
       </div>
     </div>
     <div class="shop-cart">
-      <a href="#">
+      <a href="http://localhost/html/shopCart.html">
         购物车<span class="cart-num">0</span>件
       </a>
     </div>

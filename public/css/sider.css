@@ -127,6 +127,10 @@
   border-radius: 2px;
 }
 
+.sider .cart .cart-txt a {
+  color: #fff;
+}
+
 .sider .cart .cart-txt .jian {
   position: absolute;
   top: 10px;
