@@ -67,7 +67,7 @@ let getDetail = async (req, res) => {
 //获取用户购物车
 let getShopCar = async (req, res) => {
   let username = req.session.username;
-  // let username = "qilong3";
+  // let username = "qilong";
   if (username == undefined) {
     res.send({
       status: 0,
@@ -90,7 +90,7 @@ let getShopCar = async (req, res) => {
 //添加购物车
 let addShopCar = async (req, res) => {
   let username = req.session.username;
-  // let username = "qilong3";
+  // let username = "qilong";
 
   if (!username) {
     res.send({
@@ -131,7 +131,7 @@ let addShopCar = async (req, res) => {
 //修改购物车
 let updateShopCar = async (req, res) => {
   let username = req.session.username;
-  // let username = "qilong3";
+  // let username = "qilong";
 
   if (!username) {
     res.send({
@@ -171,7 +171,7 @@ let updateShopCar = async (req, res) => {
 //删除购物车
 let deleteShopCar = async (req, res) => {
   let username = req.session.username;
-  // let username = "qilong3";
+  // let username = "qilong";
 
   if (!username) {
     res.send({
@@ -203,7 +203,7 @@ let deleteShopCar = async (req, res) => {
 //结算购物车，其实就是删除大部分购物车数据
 let settleMent = async (req, res) => {
   let username = req.session.username;
-  // let username = "qilong3";
+  // let username = "qilong";
   if (!username) {
     res.send({
       status: 0,

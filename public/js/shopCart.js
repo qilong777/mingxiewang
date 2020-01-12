@@ -24,6 +24,7 @@ class ShopCart {
     this.root = root;
   }
   init() {
+    //已选择购物车总数
     Object.defineProperty(this, "num", {
       get() {
         return this.data.reduce((total, ele) => {
@@ -36,6 +37,7 @@ class ShopCart {
         }, 0)
       }
     });
+    //购物车总数
     Object.defineProperty(this, "allNum", {
       get() {
         return this.data.reduce((total, ele) => {
@@ -43,6 +45,7 @@ class ShopCart {
         }, 0)
       }
     });
+    //总价格
     Object.defineProperty(this, "total", {
       get() {
         let total = this.data.reduce((total, ele) => {
@@ -166,6 +169,9 @@ class ShopCart {
         }
         $(this).next().val(--self.data[index].count);
       } else {
+        if (self.data[index].count >= 20) {
+          return;
+        }
         $(this).prev().val(++self.data[index].count);
       }
       parent.find(".xiaoji").text((self.data[index].count * self.data[index].price + 0.00).toFixed(2));
@@ -174,6 +180,31 @@ class ShopCart {
       $(".cart-num").text(self.allNum);
       self.$total.text("￥" + self.total);
     })
+
+    //输入事件
+    this.root[0].oninput = function (e) {
+      e = e || window.event;
+      let target = $(e.target);
+      if (target.attr("type") == "checkbox")
+        return
+      let parent = target.parents("li");
+      let index = parent.index();
+
+      if (!/\d/.test(e.data) && e.data != null) {
+        target.val(self.data[index].count);
+      }
+      if (target.val() * 1 < 1) {
+        target.val(1);
+      } else if (target.val() * 1 > 20) {
+        target.val(20);
+      }
+      self.data[index].count = target.val() * 1;
+      parent.find(".xiaoji").text((self.data[index].count * self.data[index].price + 0.00).toFixed(2));
+      self.updateSQL(self.data[index].commodityId, self.data[index].count, self.data[index].selectSize, self.data[index].isSelect);
+      self.$num.text(self.num);
+      $(".cart-num").text(self.allNum);
+      self.$total.text("￥" + self.total);
+    }
 
     //删除操作
     this.root.find(".del").click(function (e) {
