@@ -178,7 +178,7 @@
 
       //点击图形验证码切换图片
       $(".verify-img").click(function () {
-        $(this).attr("src", "http://localhost/users/verifyImg");
+        $(this).attr("src", "http://localhost/users/verifyImg?time=" + new Date().getTime());
       })
 
       //用户输入框的失去焦点事件

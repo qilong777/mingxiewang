@@ -194,6 +194,7 @@ class ProductList {
     this.sortBtns.on("click", "a", function (e) {
       let promise;
       e.preventDefault();
+      self.page = 1;
       if ($(this).hasClass("default")) {
         $(this).addClass("active").siblings("a").removeClass("active");
         self.mode = "default";
@@ -224,6 +225,10 @@ class ProductList {
           promise = self.getList(self.classId, self.page, self.mode, self.what);
         }
       }
+      self.pageBtns.find("li:eq(0)").css("visibility", "hidden");
+      self.pageBtns.find("li:eq(-1)").css("visibility", "visible");
+      self.pageBtns.find(`li:eq(${self.page})`).addClass("active")
+        .siblings().removeClass("active");
       promise.then(() => {
         self.renderList();
       })

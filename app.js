@@ -6,7 +6,7 @@ const userRouter = require('./router/userRouter.js');
 const commodityRouter = require('./router/commodityRouter.js');
 // const bodyParser = require("body-parser");
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static("public"));
+app.use(express.static("src"));
 
 //配置express-session
 app.use(session({
