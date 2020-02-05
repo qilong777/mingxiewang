@@ -68,7 +68,7 @@ let getDetail = async (req, res) => {
 let getShopCar = async (req, res) => {
   let username = req.session.username;
   // let username = "qilong";
-  if (username == undefined) {
+  if (!username) {
     res.send({
       status: 0,
       msg: "用户尚未登录"
