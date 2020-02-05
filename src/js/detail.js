@@ -7,7 +7,7 @@ import { Init } from './init.js';
         let float = $(".float", this),
           right = $(".detail-bigimg img", this),
           rightBox = $(".detail-bigimg", this);
-        $(".detail-img", this).mousemove(function (e) {
+        $(".mask", this).mousemove(function (e) {
           let x = e.offsetX,
             y = e.offsetY;
           x = x - float.width() / 2;

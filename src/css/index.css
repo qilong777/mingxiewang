@@ -1,3 +1,9 @@
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .main {
   background: #8e0a18;
 }
@@ -65,7 +71,7 @@
   margin-left: -465px;
 }
 
-.floors .floor > img {
+.floors .floor>img {
   width: 1920px;
   margin-left: -465px;
 }

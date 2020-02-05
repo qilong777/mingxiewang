@@ -6,7 +6,6 @@ $(function () {
   $.get({
     url: "http://localhost/commodities/shopCart",
     success(res) {
-      console.log(res.data);
       if (res.status == 0) {
         $(".msg").show();
         $(".wrap").hide();

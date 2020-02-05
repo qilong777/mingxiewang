@@ -16,7 +16,7 @@ let login = async (req, res) => {
   let result = await db.base(sql, data);
 
   if (result.length == 1) {
-    req.session.username = username;
+    req.session.username = result[0].username;
     res.send({
       status: 1,
       msg: "登录成功"
