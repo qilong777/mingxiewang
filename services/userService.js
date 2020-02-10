@@ -159,6 +159,17 @@ let verifyEmail = async (req, res) => {
   let email = req.query.email;
   let verify = Email.verify;
   let time = Email.time;
+  let sql = "select * from user where email=?";
+  let data = [email];
+  let result = await db.base(sql, data);
+  if (result.length) {
+    res.send({
+      msg: "该邮箱已注册，请重新输入",
+      status: 0
+    });
+    return;
+  }
+
 
   req.session.verify = verify;
   req.session.email = email;
@@ -172,12 +183,12 @@ let verifyEmail = async (req, res) => {
   }
 
   let mailOptions = {
-    from: '康爱网 1635889910@qq.com',
+    from: '名鞋网 1635889910@qq.com',
     to: email,
-    subject: '康爱网注册邮箱验证码',
+    subject: '名鞋网注册邮箱验证码',
     text: '验证码为：' + verify + ' 请不要把该验证码发送给他人'
   }
-  await Email.transporter.sendMail(mailOptions, err => {
+  Email.transporter.sendMail(mailOptions, err => {
     if (err) {
       res.send({
         msg: "验证码发送失败",

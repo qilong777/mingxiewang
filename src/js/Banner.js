@@ -4,7 +4,6 @@ class Banner {
     this.root = root;
     this.timer = null;
     this.index = 0;
-
   }
   init() {
     this.renderUI();
